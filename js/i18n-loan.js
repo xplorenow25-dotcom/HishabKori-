@@ -1,0 +1,38 @@
+Object.assign(window.I18N.bn, {
+  'lo.title': 'লোন EMI ক্যালকুলেটর – মাসিক কিস্তি ও মোট সুদ | হিসাব',
+  'lo.desc': 'লোনের পরিমাণ, সুদের হার ও মেয়াদ দিয়ে মাসিক কিস্তি, মোট সুদ ও মাসওয়ারি তালিকা দেখুন। রিডিউসিং ব্যালেন্স ও ফ্ল্যাট রেট। ফ্রি ও বাংলায়।',
+  'lo.h1': 'লোন EMI ক্যালকুলেটর',
+  'lo.lead': 'লোনের অংক, সুদের হার ও মেয়াদ লিখুন, মাসিক কিস্তি ও মোট সুদ জেনে নিন।',
+  'lo.amt': 'লোনের পরিমাণ (টাকা)', 'lo.rate': 'বার্ষিক সুদের হার (%)', 'lo.ten': 'মেয়াদ', 'lo.method': 'হিসাবের পদ্ধতি',
+  'lo.m.reducing': 'রিডিউসিং ব্যালেন্স (সাধারণ)', 'lo.m.flat': 'ফ্ল্যাট রেট',
+  'lo.emi': 'মাসিক কিস্তি', 'lo.int': 'মোট সুদ', 'lo.tot': 'মোট পরিশোধ',
+  'lo.sched': 'কিস্তির তালিকা', 'lo.show': 'পুরো তালিকা দেখুন', 'lo.hide': 'তালিকা লুকান',
+  'lo.th.m': 'মাস', 'lo.th.open': 'শুরুতে বাকি', 'lo.th.int': 'সুদ', 'lo.th.prin': 'আসল', 'lo.th.close': 'শেষে বাকি',
+  'lo.flatnote': 'ফ্ল্যাট রেটে পুরো মেয়াদে মূল টাকার ওপর সুদ ধরা হয়, তাই আসল খরচ রিডিউসিং ব্যালেন্সের চেয়ে বেশি পড়ে।',
+  'lo.how.p1': 'রিডিউসিং ব্যালেন্সে সুদ শুধু বাকি থাকা মূল টাকার ওপর ধরা হয়, তাই প্রতি মাসে সুদ কমে আর আসলের অংশ বাড়ে। কিস্তি = P × r × (1+r)^n ÷ ((1+r)^n − 1)। এখানে P লোনের পরিমাণ, r মাসিক সুদের হার (বার্ষিক ÷ ১২), n মাসের সংখ্যা।',
+  'lo.how.p2': 'ফ্ল্যাট রেটে মোট সুদ = লোন × হার × বছর, আর কিস্তি = (লোন + মোট সুদ) ÷ মাস। প্রসেসিং ফি, বীমা ও আবগারি শুল্ক এখানে ধরা নেই, তাই ব্যাংকের কিস্তি সামান্য আলাদা হতে পারে।',
+  'lo.q1': 'EMI মানে কী?', 'lo.a1': 'EMI মানে সমান মাসিক কিস্তি। প্রতি মাসে একই অংক দিয়ে লোন শোধ করা হয়।',
+  'lo.q2': 'রিডিউসিং ব্যালেন্স আর ফ্ল্যাট রেটের পার্থক্য কী?', 'lo.a2': 'রিডিউসিং ব্যালেন্সে সুদ বাকি আসলের ওপর ধরা হয়। ফ্ল্যাট রেটে শুরু থেকে শেষ পর্যন্ত পুরো লোনের ওপর ধরা হয়। তাই একই হারে ফ্ল্যাট রেটে মোট খরচ বেশি।',
+  'lo.q3': 'প্রসেসিং ফি ও চার্জ কি ধরা আছে?', 'lo.a3': 'না। প্রসেসিং ফি, বীমা ও আবগারি শুল্ক ধরা নেই। ব্যাংকের কাছে মোট চার্জের তালিকা চেয়ে নিন।',
+  'lo.q4': 'মেয়াদের আগে লোন শোধ করলে কী হয়?', 'lo.a4': 'ব্যাংকের শর্ত অনুযায়ী আগাম শোধে চার্জ লাগতে পারে। সিদ্ধান্তের আগে ব্যাংকে জিজ্ঞেস করুন।',
+  'lo.src': 'সূত্র: গাণিতিক সূত্র। সুদের হার ও চার্জের জন্য আপনার ব্যাংকের নিজস্ব তালিকা দেখুন।'
+});
+Object.assign(window.I18N.en, {
+  'lo.title': 'Loan EMI calculator – monthly installment and total interest | Hishab',
+  'lo.desc': 'Enter loan amount, interest rate and tenure to see the monthly installment, total interest and a month-by-month schedule. Reducing balance and flat rate. Free.',
+  'lo.h1': 'Loan EMI calculator',
+  'lo.lead': 'Enter the loan amount, interest rate and tenure to see your monthly installment and total interest.',
+  'lo.amt': 'Loan amount (taka)', 'lo.rate': 'Annual interest rate (%)', 'lo.ten': 'Tenure', 'lo.method': 'Method',
+  'lo.m.reducing': 'Reducing balance (common)', 'lo.m.flat': 'Flat rate',
+  'lo.emi': 'Monthly installment', 'lo.int': 'Total interest', 'lo.tot': 'Total payment',
+  'lo.sched': 'Installment schedule', 'lo.show': 'Show full schedule', 'lo.hide': 'Hide schedule',
+  'lo.th.m': 'Month', 'lo.th.open': 'Opening', 'lo.th.int': 'Interest', 'lo.th.prin': 'Principal', 'lo.th.close': 'Closing',
+  'lo.flatnote': 'Flat rate charges interest on the full amount for the whole term, so the real cost is higher than reducing balance.',
+  'lo.how.p1': 'With reducing balance, interest is charged only on the principal still owed, so interest falls and the principal part grows every month. EMI = P × r × (1+r)^n ÷ ((1+r)^n − 1), where P is the loan, r is the monthly rate (annual ÷ 12) and n is the number of months.',
+  'lo.how.p2': 'With flat rate, total interest = loan × rate × years, and EMI = (loan + total interest) ÷ months. Processing fees, insurance and excise duty are not included, so your bank\'s installment may differ slightly.',
+  'lo.q1': 'What does EMI mean?', 'lo.a1': 'EMI means equal monthly installment. You repay the loan with the same amount every month.',
+  'lo.q2': 'What is the difference between reducing balance and flat rate?', 'lo.a2': 'Reducing balance charges interest on what you still owe. Flat rate charges it on the full loan from start to end. So at the same rate, flat rate costs more.',
+  'lo.q3': 'Are processing fees and charges included?', 'lo.a3': 'No. Processing fees, insurance and excise duty are not included. Ask your bank for the full list of charges.',
+  'lo.q4': 'What if I repay the loan early?', 'lo.a4': 'Depending on the bank\'s terms, early repayment may carry a charge. Ask your bank before deciding.',
+  'lo.src': 'Source: standard formulas. For rates and charges, see your own bank\'s schedule.'
+});
