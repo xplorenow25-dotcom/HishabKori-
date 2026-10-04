@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>জমির হিসাব – শতাংশ, কাঠা, বিঘা, একর, বর্গফুট রূপান্তর | হিসাব</title>
+<meta name="description" content="শতাংশ, কাঠা, ছটাক, বিঘা, একর, বর্গফুট ও বর্গমিটার এক জায়গায় রূপান্তর করুন। প্লটের মাপ ও মোট দামও হিসাব করুন। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"১ কাঠা কত বর্গফুট?","acceptedAnswer":{"@type":"Answer","text":"সাধারণভাবে ১ কাঠা = ৭২০ বর্গফুট ধরা হয়। তবে এলাকাভেদে এটি আলাদা হতে পারে।"}},
+{"@type":"Question","name":"১ শতাংশ কত বর্গফুট?","acceptedAnswer":{"@type":"Answer","text":"১ শতাংশ = ৪৩৫.৬ বর্গফুট। ১০০ শতাংশে ১ একর, অর্থাৎ ৪৩,৫৬০ বর্গফুট।"}},
+{"@type":"Question","name":"১ বিঘা কত কাঠা?","acceptedAnswer":{"@type":"Answer","text":"স্ট্যান্ডার্ড হিসাবে ১ বিঘা = ২০ কাঠা = ১৪,৪০০ বর্গফুট। কিছু এলাকায় ১ বিঘা ৩৩ শতাংশ ধরা হয়।"}},
+{"@type":"Question","name":"১ কাঠা কত শতাংশ?","acceptedAnswer":{"@type":"Answer","text":"প্রায় ১.৬৫ শতাংশ।"}}
+]}
+</script>
+</head>
+<body data-page="tool" data-tool="2" data-title="ln.title" data-desc="ln.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c2t">জমির হিসাব</span></div>
+  <h1 class="tool-h1" data-i18n="ln.h1">জমির হিসাব</h1>
+  <p class="lead" data-i18n="ln.lead"></p>
+
+  <div class="card">
+    <h3 style="font-size:16px;margin-bottom:10px" data-i18n="ln.set.t">এলাকা ও মাপ</h3>
+    <div class="two">
+      <div><label class="lbl" for="kathaSz" data-i18n="ln.kathaSz"></label><input class="inp" id="kathaSz" type="text" inputmode="decimal" value="720"></div>
+      <div><label class="lbl" for="bighaMode" data-i18n="ln.bighaSz"></label><select class="inp" id="bighaMode"></select></div>
+    </div>
+    <div id="customWrap" style="display:none;margin-top:10px"><label class="lbl" for="customDec" data-i18n="ln.customDec"></label><input class="inp" id="customDec" type="text" inputmode="decimal" value="33"></div>
+    <p class="note" data-i18n="ln.warn"></p>
+  </div>
+
+  <div class="card" style="margin-top:14px">
+    <h2 style="font-size:20px" data-i18n="ln.conv.t">রূপান্তর</h2>
+    <p class="note" style="margin:0 0 6px" data-i18n="ln.conv.hint"></p>
+    <div id="rows"></div>
+  </div>
+
+  <div class="res">
+    <small data-i18n="ln.mixed"></small>
+    <div class="w" id="mixed"></div>
+  </div>
+  <div class="btnrow">
+    <button type="button" class="bt gold" id="copyConv"><i class="ti ti-copy"></i> <span data-i18n="copy">কপি</span></button>
+    <button type="button" class="bt out" id="shareConv"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share">শেয়ার</span></button>
+    <button type="button" class="bt out" id="resetConv" style="flex:0 0 auto"><i class="ti ti-eraser"></i> <span data-i18n="tw.clear">মুছুন</span></button>
+  </div>
+
+  <div class="ad rect"></div>
+
+  <div class="card">
+    <h2 style="font-size:20px" data-i18n="ln.plot.t">প্লটের মাপ ও দাম</h2>
+    <p class="note" style="margin:0 0 10px" data-i18n="ln.plot.s"></p>
+    <div class="two">
+      <div><label class="lbl" for="plen" data-i18n="ln.len"></label><input class="inp" id="plen" type="text" inputmode="decimal"></div>
+      <div><label class="lbl" for="pwid" data-i18n="ln.wid"></label><input class="inp" id="pwid" type="text" inputmode="decimal"></div>
+    </div>
+    <div style="margin-top:10px"><select class="inp" id="pdim" aria-label="unit"></select></div>
+    <div class="two" style="margin-top:10px">
+      <div><label class="lbl" for="pprice" data-i18n="ln.price"></label><input class="inp" id="pprice" type="text" inputmode="decimal"></div>
+      <div><label class="lbl" for="punit" data-i18n="ln.per"></label><select class="inp" id="punit"></select></div>
+    </div>
+  </div>
+  <div class="res" id="plotOut" style="display:none" aria-live="polite"></div>
+
+  <section class="prose">
+    <h2 data-i18n="ln.ref.t">মনে রাখার হিসাব</h2>
+    <ul class="ref">
+      <li data-i18n="ln.ref.1"></li><li data-i18n="ln.ref.2"></li><li data-i18n="ln.ref.3"></li><li data-i18n="ln.ref.4"></li>
+    </ul>
+  </section>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="ln.how.p1"></p>
+    <p data-i18n="ln.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="ln.q1"></summary><p data-i18n="ln.a1"></p></details>
+    <details><summary data-i18n="ln.q2"></summary><p data-i18n="ln.a2"></p></details>
+    <details><summary data-i18n="ln.q3"></summary><p data-i18n="ln.a3"></p></details>
+    <details><summary data-i18n="ln.q4"></summary><p data-i18n="ln.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="ln.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-land.js"></script>
+<script src="js/common.js"></script>
+<script src="js/land-core.js"></script>
+<script src="js/land.js"></script>
+</body>
+</html>

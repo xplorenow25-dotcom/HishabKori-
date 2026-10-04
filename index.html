@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>হিসাব (Hishab) – সব হিসাব, এক জায়গায়</title>
+<meta name="description" content="টাকা কথায়, জমির হিসাব, লোন EMI, DPS, FDR ও যাকাত ক্যালকুলেটর। ফ্রি, সহজ, বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+</head>
+<body data-page="home" data-title="site.title" data-desc="site.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="wrap">
+
+  <div class="hero">
+    <h1 data-i18n="home.h1">সব হিসাব,<br>এক জায়গায়</h1>
+    <p data-i18n="home.sub">টাকা, জমি, লোন, যাকাত। সব ক্যালকুলেটর ফ্রি, বাংলায় ও সহজে।</p>
+    <label class="search"><i class="ti ti-search"></i><input id="q" type="search" data-i18n-ph="home.search" placeholder="কী হিসাব করতে চান? যেমন: জমি, লোন"></label>
+  </div>
+
+  <section id="tools" style="padding-top:8px">
+    <div class="grid" id="grid">
+      <a class="card" href="taka-in-words.html" data-int="taka-in-words.html" data-k="taka words cheque invoice চেক ইনভয়েস"><div class="ic"><i class="ti ti-coin"></i></div><h3 data-i18n="c1t">টাকা কথায়</h3><p data-i18n="c1d">চেক ও ইনভয়েসের জন্য অংক থেকে কথায়</p></a>
+      <a class="card" href="land-converter.html" data-int="land-converter.html" data-k="land জমি শতাংশ কাঠা বিঘা decimal katha bigha"><div class="ic"><i class="ti ti-map-2"></i></div><h3 data-i18n="c2t">জমির হিসাব</h3><p data-i18n="c2d">শতাংশ, কাঠা, বিঘা, বর্গফুট রূপান্তর</p></a>
+      <a class="card" href="loan-emi.html" data-int="loan-emi.html" data-k="loan লোন emi কিস্তি সুদ"><div class="ic"><i class="ti ti-calculator"></i></div><h3 data-i18n="c3t">লোন EMI</h3><p data-i18n="c3d">মাসিক কিস্তি ও মোট সুদ</p></a>
+      <a class="card" href="dps-fdr.html" data-int="dps-fdr.html" data-k="dps fdr সঞ্চয় ব্যাংক savings"><div class="ic"><i class="ti ti-pig-money"></i></div><h3 data-i18n="c4t">DPS ও FDR</h3><p data-i18n="c4d">মেয়াদ শেষে কত পাবেন</p></a>
+      <a class="card" href="zakat.html" data-int="zakat.html" data-k="zakat যাকাত সোনা রূপা gold silver"><div class="ic g"><i class="ti ti-moon-stars"></i></div><h3 data-i18n="c5t">যাকাত</h3><p data-i18n="c5d">সোনা, রূপা ও সঞ্চয়ের যাকাত</p></a>
+      <a class="card" href="income-tax.html" data-int="income-tax.html" data-k="tax income আয়কর ট্যাক্স কর"><div class="ic g"><i class="ti ti-receipt-tax"></i></div><h3 data-i18n="c6t">আয়কর</h3><p data-i18n="c6d">বছরের কর হিসাব</p></a>
+    </div>
+    <p class="empty" id="empty" data-i18n="home.empty">কিছু পাওয়া যায়নি। নিচে নতুন টুলের অনুরোধ করুন।</p>
+  </section>
+
+  <div class="ad"></div>
+
+  <section id="why">
+    <h2 data-i18n="why.t">কেন হিসাব</h2>
+    <p class="sub" data-i18n="why.s">সাধারণ মানুষের জন্য বানানো, কোনো ঝামেলা ছাড়া।</p>
+    <div class="why">
+      <div class="card"><div class="ic"><i class="ti ti-gift"></i></div><h3 data-i18n="w1t">সবসময় ফ্রি</h3><p data-i18n="w1d">সাইন-আপ লাগে না, কার্ড লাগে না।</p></div>
+      <div class="card"><div class="ic"><i class="ti ti-bolt"></i></div><h3 data-i18n="w2t">হালকা ও দ্রুত</h3><p data-i18n="w2d">ধীর ফোন ও কম ডেটাতেও চলে।</p></div>
+      <div class="card"><div class="ic"><i class="ti ti-language"></i></div><h3 data-i18n="w3t">বাংলা আগে</h3><p data-i18n="w3d">লক্ষ-কোটির সঠিক নিয়মে হিসাব।</p></div>
+      <div class="card"><div class="ic"><i class="ti ti-lock"></i></div><h3 data-i18n="w4t">আপনার তথ্য নিরাপদ</h3><p data-i18n="w4d">সংখ্যা আপনার ফোন থেকে বের হয় না।</p></div>
+    </div>
+  </section>
+
+  <section>
+    <div class="band">
+      <h2 data-i18n="help.t">কোন কাজে সাহায্য করবে</h2>
+      <p class="sub" data-i18n="help.s">প্রতিদিনের বাস্তব দরকার মেটাতে।</p>
+      <div class="sit">
+        <div><i class="ti ti-writing"></i><p><b data-i18n="h1t">চেক লেখা</b><span data-i18n="h1d">টাকার অংক সঙ্গে সঙ্গে কথায়, ভুল ছাড়া।</span></p></div>
+        <div><i class="ti ti-home-dollar"></i><p><b data-i18n="h2t">জমি কেনাবেচা</b><span data-i18n="h2d">শতাংশ থেকে কাঠা, মোট দাম এক নজরে।</span></p></div>
+        <div><i class="ti ti-scale"></i><p><b data-i18n="h3t">লোন তুলনা</b><span data-i18n="h3d">কিস্তি দেখে ঠিক করুন কোন লোন আপনার জন্য।</span></p></div>
+        <div><i class="ti ti-moon-stars"></i><p><b data-i18n="h4t">রমজানের আগে যাকাত</b><span data-i18n="h4d">সম্পদ লিখলেই যাকাতের পরিমাণ।</span></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 data-i18n="how.t">কীভাবে কাজ করে</h2>
+    <p class="sub" data-i18n="how.s">তিন ধাপে হিসাব শেষ।</p>
+    <div class="steps">
+      <div class="card"><div class="num">1</div><h3 data-i18n="s1t">টুল বেছে নিন</h3><p data-i18n="s1d">আপনার দরকারি ক্যালকুলেটর খুলুন।</p></div>
+      <div class="card"><div class="num">2</div><h3 data-i18n="s2t">সংখ্যা লিখুন</h3><p data-i18n="s2d">ফলাফল সঙ্গে সঙ্গে দেখা যাবে, বাটন চাপতে হবে না।</p></div>
+      <div class="card"><div class="num">3</div><h3 data-i18n="s3t">কপি বা শেয়ার</h3><p data-i18n="s3d">এক ট্যাপে কপি করুন বা হোয়াটসঅ্যাপে পাঠান।</p></div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <h2 data-i18n="faq.t">সাধারণ প্রশ্ন</h2>
+    <p class="sub" data-i18n="faq.s">যা অনেকে জানতে চান।</p>
+    <details><summary data-i18n="q1">হিসাব কি সত্যিই ফ্রি?</summary><p data-i18n="a1">হ্যাঁ। সব টুল ফ্রি এবং সাইন-আপ ছাড়াই ব্যবহার করা যায়। সাইট চালানোর খরচ বিজ্ঞাপন থেকে আসে।</p></details>
+    <details><summary data-i18n="q2">ফলাফল কতটা নির্ভুল?</summary><p data-i18n="a2">গাণিতিক হিসাব নির্ভুল। তবে ব্যাংকের সুদের হার, জমির মাপ ও কর নিয়ম এলাকা ও সময়ভেদে বদলায়, তাই বড় সিদ্ধান্তের আগে সংশ্লিষ্ট প্রতিষ্ঠানে যাচাই করে নিন।</p></details>
+    <details><summary data-i18n="q3">আমার দেওয়া তথ্য কি কোথাও জমা হয়?</summary><p data-i18n="a3">না। হিসাব আপনার ফোন বা কম্পিউটারের ব্রাউজারেই হয়, আমাদের সার্ভারে সংখ্যা পাঠানো হয় না।</p></details>
+    <details><summary data-i18n="q4">ইন্টারনেট ছাড়া চলবে?</summary><p data-i18n="a4">পেজ একবার খুললে বেশিরভাগ টুল কম ডেটাতেই চলে।</p></details>
+    <details><summary data-i18n="q5">নতুন ক্যালকুলেটর চাইলে কী করব?</summary><p data-i18n="a5">নিচের ফর্মে লিখে জানান। বেশি অনুরোধ পাওয়া টুল আগে বানানো হবে।</p></details>
+  </section>
+
+  <section>
+    <div class="req">
+      <div><h2 style="margin:0" data-i18n="req.t">কোন টুল দরকার?</h2><p style="color:#6B5A2A" data-i18n="req.s">আমাদের জানান, পরের ক্যালকুলেটর হয়তো আপনারটাই।</p></div>
+      <form id="reqf"><input type="text" data-i18n-ph="req.ph" placeholder="যেমন: পেনশন ক্যালকুলেটর"><button class="btn" type="submit" data-i18n="req.btn">পাঠান</button></form>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/common.js"></script>
+<script>
+(function(){
+  var q=document.getElementById('q'),cards=document.querySelectorAll('#grid .card'),em=document.getElementById('empty');
+  q.addEventListener('input',function(){
+    var v=q.value.trim().toLowerCase(),n=0;
+    cards.forEach(function(c){
+      var s=(c.textContent+' '+(c.dataset.k||'')).toLowerCase(),show=!v||s.indexOf(v)>-1;
+      c.style.display=show?'':'none';if(show)n++;
+    });
+    em.style.display=n?'none':'block';
+  });
+  var f=document.getElementById('reqf');
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    f.querySelector('input').value='';
+    f.querySelector('button').textContent=Hishab.t('req.ok');
+  });
+  document.addEventListener('langchange',function(){f.querySelector('button').textContent=Hishab.t('req.btn');});
+})();
+</script>
+</body>
+</html>

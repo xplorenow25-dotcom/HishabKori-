@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>আয়কর ক্যালকুলেটর – বাংলাদেশ ব্যক্তিগত আয়কর স্ল্যাব | হিসাব</title>
+<meta name="description" content="বার্ষিক করযোগ্য আয় লিখে স্ল্যাব অনুযায়ী আয়করের হিসাব দেখুন। কর-মুক্ত সীমা ৪ লক্ষ টাকা, তারপর ১০% থেকে ৩০%। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"কর-মুক্ত সীমা কত?","acceptedAnswer":{"@type":"Answer","text":"সাধারণ করদাতার জন্য ৪,০০,০০০ টাকা। নারী, প্রবীণ, প্রতিবন্ধী ও গেজেটেড মুক্তিযোদ্ধাদের সীমা আলাদা হতে পারে।"}},{"@type":"Question","name":"আয়করের ধাপগুলো কী কী?","acceptedAnswer":{"@type":"Answer","text":"কর-মুক্ত সীমার পর পরের ৩ লক্ষে ১০%, পরের ৪ লক্ষে ১৫%, পরের ৫ লক্ষে ২০%, পরের ২০ লক্ষে ২৫% এবং এরপর ৩০%।"}},{"@type":"Question","name":"ন্যূনতম কর কি এখানে ধরা আছে?","acceptedAnswer":{"@type":"Answer","text":"না। কর-মুক্ত সীমার বেশি আয় থাকলে এলাকাভেদে ন্যূনতম কর দিতে হতে পারে, যা এখানে ধরা হয়নি। NBR-এর বর্তমান নিয়ম দেখুন।"}},{"@type":"Question","name":"এটি কি রিটার্ন জমার জন্য যথেষ্ট?","acceptedAnswer":{"@type":"Answer","text":"না। এটি শুধু আনুমানিক ধারণার জন্য। রিটার্ন জমার আগে NBR-এর নিয়ম বা কর পেশাজীবীর পরামর্শ নিন।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="6" data-title="tx.title" data-desc="tx.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c6t"></span></div>
+  <h1 class="tool-h1" data-i18n="tx.h1"></h1>
+  <p class="lead" data-i18n="tx.lead"></p>
+
+<div class="card"><div class="two"><div><label class="lbl" for="income" data-i18n="tx.income"></label><input class="inp" id="income" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="cat" data-i18n="tx.cat"></label><select class="inp" id="cat"></select></div></div>
+<div id="customWrap" class="hide" style="margin-top:10px"><div><label class="lbl" for="custom" data-i18n="tx.custom"></label><input class="inp" id="custom" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<p class="note" data-i18n="tx.slabnote"></p></div>
+<div class="res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<div id="bands" class="grp"></div>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="tx.how.p1"></p>
+    <p data-i18n="tx.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="tx.q1"></summary><p data-i18n="tx.a1"></p></details>
+    <details><summary data-i18n="tx.q2"></summary><p data-i18n="tx.a2"></p></details>
+    <details><summary data-i18n="tx.q3"></summary><p data-i18n="tx.a3"></p></details>
+    <details><summary data-i18n="tx.q4"></summary><p data-i18n="tx.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="tx.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-tax.js"></script>
+<script src="js/common.js"></script>
+<script src="js/tax-core.js"></script>
+<script src="js/tax.js"></script>
+</body>
+</html>

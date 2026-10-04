@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>DPS ও FDR ক্যালকুলেটর – মেয়াদ শেষে কত পাবেন | হিসাব</title>
+<meta name="description" content="DPS-এ মাসিক জমা ও FDR-এ এককালীন জমার মেয়াদ শেষের টাকা, সুদ ও উৎসে কর হিসাব করুন। সুদের হার নিজে বসান। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"DPS আর FDR-এর পার্থক্য কী?","acceptedAnswer":{"@type":"Answer","text":"DPS-এ প্রতি মাসে অল্প অল্প টাকা জমা দিতে হয়। FDR-এ একবারে বড় অংক জমা রেখে নির্দিষ্ট মেয়াদ পর সুদসহ ফেরত পাওয়া যায়।"}},{"@type":"Question","name":"উৎসে কর কত কাটা হয়?","acceptedAnswer":{"@type":"Answer","text":"সাধারণভাবে জমার সুদ থেকে ১০% উৎসে কর কাটা হয়। কর রিটার্ন জমার প্রমাণ না থাকলে হার বেশি, যা এখানে ১৫% ধরা যায়। আপনার ব্যাংকে নিশ্চিত হয়ে নিন।"}},{"@type":"Question","name":"আবগারি শুল্ক কী?","acceptedAnswer":{"@type":"Answer","text":"ব্যাংকে জমা টাকার ওপর বছরে একবার কাটা হয়। নির্দিষ্ট অংক পর্যন্ত ব্যালেন্সে ছাড় থাকে, যা বাজেটে বদলায়। ব্যাংকের কাছ থেকে অংক জেনে নিন।"}},{"@type":"Question","name":"ব্যাংকের অংক এখানকার সঙ্গে মেলে না কেন?","acceptedAnswer":{"@type":"Answer","text":"ব্যাংকভেদে সুদ যোগের নিয়ম ও দিন গণনা আলাদা হতে পারে। তাই আনুমানিক ধারণার জন্য এই হিসাব, চূড়ান্ত অংক ব্যাংকের।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="4" data-title="sv.title" data-desc="sv.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c4t"></span></div>
+  <h1 class="tool-h1" data-i18n="sv.h1"></h1>
+  <p class="lead" data-i18n="sv.lead"></p>
+
+<div class="tabs"><button type="button" id="tabD" data-i18n="sv.tab.dps"></button><button type="button" id="tabF" data-i18n="sv.tab.fdr"></button></div>
+<div id="panD"><div class="card"><div class="two"><div><label class="lbl" for="dep" data-i18n="sv.dep"></label><input class="inp" id="dep" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="drate" data-i18n="sv.rate"></label><input class="inp" id="drate" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="dten" data-i18n="sv.ten"></label><div class="two" style="gap:6px"><input class="inp" id="dten" type="text" inputmode="decimal" autocomplete="off"><select class="inp" id="dUnit" aria-label="unit"></select></div></div><div><label class="lbl" for="comp" data-i18n="sv.comp"></label><select class="inp" id="comp"></select></div></div></div>
+<div class="res" id="resD" aria-live="polite"></div><div id="yearly" class="grp"></div></div>
+<div id="panF" class="hide"><div class="card"><div class="two"><div><label class="lbl" for="famt" data-i18n="sv.fdr.amt"></label><input class="inp" id="famt" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="frate" data-i18n="sv.rate"></label><input class="inp" id="frate" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="ften" data-i18n="sv.ten"></label><div class="two" style="gap:6px"><input class="inp" id="ften" type="text" inputmode="decimal" autocomplete="off"><select class="inp" id="fUnit" aria-label="unit"></select></div></div><div><label class="lbl" for="mode" data-i18n="sv.mode"></label><select class="inp" id="mode"></select></div></div>
+<div id="freqWrap" class="hide" style="margin-top:10px"><div><label class="lbl" for="freq" data-i18n="sv.freq"></label><select class="inp" id="freq"></select></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="tds" data-i18n="sv.tds"></label><select class="inp" id="tds"></select></div><div><label class="lbl" for="excise" data-i18n="sv.excise"></label><input class="inp" id="excise" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<p class="note" data-i18n="sv.exnote"></p></div>
+<div class="res" id="resF" aria-live="polite"></div></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<p class="note" data-i18n="est"></p>
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="sv.how.p1"></p>
+    <p data-i18n="sv.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="sv.q1"></summary><p data-i18n="sv.a1"></p></details>
+    <details><summary data-i18n="sv.q2"></summary><p data-i18n="sv.a2"></p></details>
+    <details><summary data-i18n="sv.q3"></summary><p data-i18n="sv.a3"></p></details>
+    <details><summary data-i18n="sv.q4"></summary><p data-i18n="sv.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="sv.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-savings.js"></script>
+<script src="js/common.js"></script>
+<script src="js/savings-core.js"></script>
+<script src="js/savings.js"></script>
+</body>
+</html>

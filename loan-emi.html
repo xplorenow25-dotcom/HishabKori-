@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>লোন EMI ক্যালকুলেটর – মাসিক কিস্তি ও মোট সুদ | হিসাব</title>
+<meta name="description" content="লোনের পরিমাণ, সুদের হার ও মেয়াদ দিয়ে মাসিক কিস্তি, মোট সুদ ও মাসওয়ারি তালিকা দেখুন। রিডিউসিং ব্যালেন্স ও ফ্ল্যাট রেট। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"EMI মানে কী?","acceptedAnswer":{"@type":"Answer","text":"EMI মানে সমান মাসিক কিস্তি। প্রতি মাসে একই অংক দিয়ে লোন শোধ করা হয়।"}},{"@type":"Question","name":"রিডিউসিং ব্যালেন্স আর ফ্ল্যাট রেটের পার্থক্য কী?","acceptedAnswer":{"@type":"Answer","text":"রিডিউসিং ব্যালেন্সে সুদ বাকি আসলের ওপর ধরা হয়। ফ্ল্যাট রেটে শুরু থেকে শেষ পর্যন্ত পুরো লোনের ওপর ধরা হয়। তাই একই হারে ফ্ল্যাট রেটে মোট খরচ বেশি।"}},{"@type":"Question","name":"প্রসেসিং ফি ও চার্জ কি ধরা আছে?","acceptedAnswer":{"@type":"Answer","text":"না। প্রসেসিং ফি, বীমা ও আবগারি শুল্ক ধরা নেই। ব্যাংকের কাছে মোট চার্জের তালিকা চেয়ে নিন।"}},{"@type":"Question","name":"মেয়াদের আগে লোন শোধ করলে কী হয়?","acceptedAnswer":{"@type":"Answer","text":"ব্যাংকের শর্ত অনুযায়ী আগাম শোধে চার্জ লাগতে পারে। সিদ্ধান্তের আগে ব্যাংকে জিজ্ঞেস করুন।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="3" data-title="lo.title" data-desc="lo.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c3t"></span></div>
+  <h1 class="tool-h1" data-i18n="lo.h1"></h1>
+  <p class="lead" data-i18n="lo.lead"></p>
+
+<div class="card"><div class="two"><div><label class="lbl" for="amt" data-i18n="lo.amt"></label><input class="inp" id="amt" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="rate" data-i18n="lo.rate"></label><input class="inp" id="rate" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="ten" data-i18n="lo.ten"></label><div class="two" style="gap:6px"><input class="inp" id="ten" type="text" inputmode="decimal" autocomplete="off"><select class="inp" id="unit" aria-label="unit"></select></div></div><div><label class="lbl" for="method" data-i18n="lo.method"></label><select class="inp" id="method"></select></div></div></div>
+<div class="res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<div id="sched" class="hide grp"><h3 data-i18n="lo.sched"></h3><button type="button" class="bt out" id="toggle" style="width:100%;flex:none"></button><div id="tbl"></div></div>
+<p class="note" data-i18n="est"></p>
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="lo.how.p1"></p>
+    <p data-i18n="lo.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="lo.q1"></summary><p data-i18n="lo.a1"></p></details>
+    <details><summary data-i18n="lo.q2"></summary><p data-i18n="lo.a2"></p></details>
+    <details><summary data-i18n="lo.q3"></summary><p data-i18n="lo.a3"></p></details>
+    <details><summary data-i18n="lo.q4"></summary><p data-i18n="lo.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="lo.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-loan.js"></script>
+<script src="js/common.js"></script>
+<script src="js/loan-core.js"></script>
+<script src="js/loan.js"></script>
+</body>
+</html>

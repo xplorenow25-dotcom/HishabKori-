@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>যাকাত ক্যালকুলেটর – সোনা, রূপা, নগদ ও সঞ্চয়ের যাকাত | হিসাব</title>
+<meta name="description" content="নগদ টাকা, সোনা, রূপা, ব্যবসার পণ্য ও সঞ্চয় লিখে যাকাতের পরিমাণ হিসাব করুন। নিসাব ৭.৫ ভরি সোনা বা ৫২.৫ ভরি রূপা। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"যাকাতের নিসাব কত?","acceptedAnswer":{"@type":"Answer","text":"৭.৫ ভরি (প্রায় ৮৭.৪৮ গ্রাম) সোনা অথবা ৫২.৫ ভরি (প্রায় ৬১২.৩৬ গ্রাম) রূপা বা তার সমমূল্যের সম্পদ।"}},{"@type":"Question","name":"যাকাতের হার কত?","acceptedAnswer":{"@type":"Answer","text":"নিসাব পূর্ণ হলে মোট সম্পদের ২.৫%।"}},{"@type":"Question","name":"কোন নিসাব ধরব, সোনা না রূপা?","acceptedAnswer":{"@type":"Answer","text":"নগদ ও অন্যান্য সম্পদের ক্ষেত্রে অনেক আলেম ও প্রতিষ্ঠান রূপার নিসাব ধরার পরামর্শ দেন, কারণ তাতে গরিবের উপকার বেশি। তবে এ বিষয়ে আপনার আলেমের পরামর্শ নিন।"}},{"@type":"Question","name":"আমার দেওয়া সংখ্যা কি কোথাও যায়?","acceptedAnswer":{"@type":"Answer","text":"না। সব হিসাব আপনার ব্রাউজারেই হয়।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="5" data-title="zk.title" data-desc="zk.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c5t"></span></div>
+  <h1 class="tool-h1" data-i18n="zk.h1"></h1>
+  <p class="lead" data-i18n="zk.lead"></p>
+
+<div class="card"><h3 style="font-size:16px" data-i18n="zk.prices"></h3><p class="note" style="margin:0 0 10px" data-i18n="zk.pricehint"></p>
+<div class="two"><div><label class="lbl" for="gp" data-i18n="zk.gp"></label><input class="inp" id="gp" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="sp" data-i18n="zk.sp"></label><input class="inp" id="sp" type="text" inputmode="decimal" autocomplete="off" ></div></div></div>
+<div class="card" style="margin-top:14px"><h3 style="font-size:16px;margin-bottom:10px" data-i18n="zk.assets"></h3>
+<div class="two"><div><label class="lbl" for="cash" data-i18n="zk.cash"></label><input class="inp" id="cash" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="biz" data-i18n="zk.business"></label><input class="inp" id="biz" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="gold" data-i18n="zk.gold"></label><input class="inp" id="gold" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="silver" data-i18n="zk.silver"></label><input class="inp" id="silver" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="recv" data-i18n="zk.recv"></label><input class="inp" id="recv" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="other" data-i18n="zk.other"></label><input class="inp" id="other" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="debts" data-i18n="zk.debts"></label><input class="inp" id="debts" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="basis" data-i18n="zk.basis"></label><select class="inp" id="basis"></select></div></div></div>
+<div class="res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<p class="note" data-i18n="zk.note"></p>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="zk.how.p1"></p>
+    <p data-i18n="zk.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="zk.q1"></summary><p data-i18n="zk.a1"></p></details>
+    <details><summary data-i18n="zk.q2"></summary><p data-i18n="zk.a2"></p></details>
+    <details><summary data-i18n="zk.q3"></summary><p data-i18n="zk.a3"></p></details>
+    <details><summary data-i18n="zk.q4"></summary><p data-i18n="zk.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="zk.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-zakat.js"></script>
+<script src="js/common.js"></script>
+<script src="js/zakat-core.js"></script>
+<script src="js/zakat.js"></script>
+</body>
+</html>
