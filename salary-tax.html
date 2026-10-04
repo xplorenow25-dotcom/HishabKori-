@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>বেতনের আয়কর ক্যালকুলেটর – মাসিক বেতন থেকে বার্ষিক কর | হিসাব</title>
+<meta name="description" content="মাসিক বেতন ও বোনাস লিখে বছরের আয়কর, মাসে কত কর ও বিনিয়োগ রেয়াতের হিসাব দেখুন। অর্থ আইন ২০২৬ অনুযায়ী। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"কর-মুক্ত সীমা কত?","acceptedAnswer":{"@type":"Answer","text":"অর্থ আইন ২০২৬ অনুযায়ী ২০২৬-২৭ করবর্ষে সাধারণ করদাতার জন্য ৪,০০,০০০ টাকা। নারী ও ৬৫+ বছর বয়সীদের ৪,৫০,০০০, প্রতিবন্ধী ও তৃতীয় লিঙ্গের ৫,২৫,০০০ এবং গেজেটেড যুদ্ধাহত মুক্তিযোদ্ধা ও জুলাই যোদ্ধাদের ৫,৫০,০০০ টাকা।"}},{"@type":"Question","name":"বিনিয়োগ রেয়াত কীভাবে হিসাব হয়?","acceptedAnswer":{"@type":"Answer","text":"অনুমোদিত বিনিয়োগের ১০%, করযোগ্য আয়ের ৩% ও ৭,৫০,০০০ টাকা, এই তিনটির মধ্যে যেটি সবচেয়ে কম, সেটিই রেয়াত। তাই বেশি বিনিয়োগ করলেই রেয়াত বাড়ে না।"}},{"@type":"Question","name":"আগে রিটার্ন জমা দিলে কী সুবিধা?","acceptedAnswer":{"@type":"Answer","text":"জুলাই থেকে সেপ্টেম্বরের মধ্যে জমা দিলে করের ৫% ছাড় মেলে, সর্বোচ্চ ২৫,০০০ টাকা। জানুয়ারি থেকে মার্চে ২% (ন্যূনতম ৩,০০০) এবং এপ্রিল থেকে জুনে ৫% (ন্যূনতম ৫,০০০) বাড়তি কর লাগে।"}},{"@type":"Question","name":"অফিস মাসে কত কর কাটবে?","acceptedAnswer":{"@type":"Answer","text":"এখানকার \"মাসে গড়ে\" অংকটি বছরের কর ১২ দিয়ে ভাগ করে দেখানো। অফিস নিজের নিয়মে উৎসে কর কাটে, চূড়ান্ত হিসাব মেলে রিটার্নে।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="7" data-title="sl.title" data-desc="sl.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c7t"></span></div>
+  <h1 class="tool-h1" data-i18n="sl.h1"></h1>
+  <p class="lead" data-i18n="sl.lead"></p>
+
+<div class="card"><div class="two"><div><label class="lbl" for="monthly" data-i18n="sl.monthly"></label><input class="inp" id="monthly" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="bonus" data-i18n="sl.bonus"></label><input class="inp" id="bonus" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="cat" data-i18n="tx.cat"></label><select class="inp" id="cat"></select></div><div><label class="lbl" for="invest" data-i18n="sl.invest"></label><input class="inp" id="invest" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div style="margin-top:10px"><div><label class="lbl" for="when" data-i18n="sl.when"></label><select class="inp" id="when"></select></div></div>
+<label class="sw"  style="margin:10px 0 0;display:flex"><input type="checkbox" id="newtp"> <span data-i18n="sl.newtp"></span></label></div>
+<div class="res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<div id="bands" class="grp"></div>
+<p class="note" data-i18n="est"></p>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="sl.how.p1"></p>
+    <p data-i18n="sl.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="sl.q1"></summary><p data-i18n="sl.a1"></p></details>
+    <details><summary data-i18n="sl.q2"></summary><p data-i18n="sl.a2"></p></details>
+    <details><summary data-i18n="sl.q3"></summary><p data-i18n="sl.a3"></p></details>
+    <details><summary data-i18n="sl.q4"></summary><p data-i18n="sl.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="sl.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-tax.js"></script>
+<script src="js/i18n-biz.js"></script>
+<script src="js/common.js"></script>
+<script src="js/tax-core.js"></script>
+<script src="js/salary.js"></script>
+</body>
+</html>

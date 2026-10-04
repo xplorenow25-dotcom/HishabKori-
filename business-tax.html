@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ব্যবসার আয়কর ক্যালকুলেটর – কোম্পানি ও ব্যক্তিগত ব্যবসা | হিসাব</title>
+<meta name="description" content="কোম্পানির ধরন ও করযোগ্য মুনাফা লিখে কর হিসাব করুন। ব্যক্তিগত ব্যবসার আয়করও দেখুন। অর্থ আইন ২০২৬ অনুযায়ী। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"কোম্পানির আয়কর হার কত?","acceptedAnswer":{"@type":"Answer","text":"ধরনভেদে আলাদা। অর্থ আইন ২০২৬ অনুযায়ী অন্যান্য কোম্পানি ২৭.৫%, পাবলিকলি ট্রেডেড কোম্পানি ২২.৫% বা ২৫%, ফার্ম ও ট্রাস্ট ২৭.৫%, সমবায় ২০%, তালিকাভুক্ত ব্যাংক-বীমা ৩৭.৫% এবং তালিকাবহির্ভূত ৪০%।"}},{"@type":"Question","name":"ব্যাংকের মাধ্যমে লেনদেনের কম হার কী?","acceptedAnswer":{"@type":"Answer","text":"কিছু ধরনের কোম্পানি সব লেনদেন ব্যাংক ট্রান্সফারে করলে ২.৫ শতাংশ পয়েন্ট পর্যন্ত কম হারে কর দেয়। শর্তের পুরো তালিকা NBR থেকে দেখে নিন।"}},{"@type":"Question","name":"ব্যক্তিগত ব্যবসায় কত কর?","acceptedAnswer":{"@type":"Answer","text":"ব্যক্তিগত ব্যবসার নিট আয়ে ব্যক্তির সাধারণ আয়করের ধাপ প্রযোজ্য। কর-মুক্ত সীমার পর ১০%, ১৫%, ২০%, ২৫% এবং সবশেষ ৩০%।"}},{"@type":"Question","name":"ন্যূনতম কর কী?","acceptedAnswer":{"@type":"Answer","text":"লোকসান বা কম মুনাফা হলেও মোট প্রাপ্তির একটি নির্দিষ্ট শতাংশ কর দিতে হতে পারে। হার খাত ভেদে আলাদা, তাই এখানে ঐচ্ছিক ঘরে নিজে লিখতে হয়।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="8" data-title="bt.title" data-desc="bt.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c8t"></span></div>
+  <h1 class="tool-h1" data-i18n="bt.h1"></h1>
+  <p class="lead" data-i18n="bt.lead"></p>
+
+<div class="tabs"><button type="button" id="tabC" data-i18n="bt.tab.co"></button><button type="button" id="tabM" data-i18n="bt.tab.me"></button></div>
+<div id="panC"><div class="card"><div><label class="lbl" for="profit" data-i18n="bt.profit"></label><input class="inp" id="profit" type="text" inputmode="decimal" autocomplete="off" ></div>
+<div style="margin-top:10px"><div><label class="lbl" for="ctype" data-i18n="bt.type"></label><select class="inp" id="ctype"></select></div></div>
+<div id="bankWrap"><label class="sw"  style="margin:10px 0 0;display:flex"><input type="checkbox" id="bank"> <span data-i18n="bt.bank"></span></label></div>
+<details style="margin-top:12px"><summary data-i18n="bt.min.t"></summary><div class="two" style="margin-top:10px"><div><label class="lbl" for="receipts" data-i18n="bt.receipts"></label><input class="inp" id="receipts" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="minrate" data-i18n="bt.minrate"></label><input class="inp" id="minrate" type="text" inputmode="decimal" autocomplete="off" ></div></div><p class="note" data-i18n="bt.min.hint"></p></details></div>
+<div class="res" id="resC" aria-live="polite"></div></div>
+<div id="panM" class="hide"><div class="card"><div><label class="lbl" for="mprofit" data-i18n="bt.me.profit"></label><input class="inp" id="mprofit" type="text" inputmode="decimal" autocomplete="off" ></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="cat" data-i18n="tx.cat"></label><select class="inp" id="cat"></select></div><div><label class="lbl" for="minvest" data-i18n="sl.invest"></label><input class="inp" id="minvest" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<label class="sw"  style="margin:10px 0 0;display:flex"><input type="checkbox" id="newtp"> <span data-i18n="sl.newtp"></span></label><p class="note" data-i18n="bt.me.hint"></p></div>
+<div class="res" id="resM" aria-live="polite"></div><div id="bands" class="grp"></div></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<p class="note" data-i18n="est"></p>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="bt.how.p1"></p>
+    <p data-i18n="bt.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="bt.q1"></summary><p data-i18n="bt.a1"></p></details>
+    <details><summary data-i18n="bt.q2"></summary><p data-i18n="bt.a2"></p></details>
+    <details><summary data-i18n="bt.q3"></summary><p data-i18n="bt.a3"></p></details>
+    <details><summary data-i18n="bt.q4"></summary><p data-i18n="bt.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="bt.src"></span></p>
+
+</div>
+
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-tax.js"></script>
+<script src="js/i18n-biz.js"></script>
+<script src="js/common.js"></script>
+<script src="js/tax-core.js"></script>
+<script src="js/business.js"></script>
+</body>
+</html>
