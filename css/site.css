@@ -1,7 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Bengali:wght@400;500;600&text=%E0%A7%A6%E0%A7%A7%E0%A7%A8%E0%A7%A9%E0%A7%AA%E0%A7%AB%E0%A7%AC%E0%A7%AD%E0%A7%AE%E0%A7%AF&display=swap');
 :root{--bg:#F7F9F6;--green:#0B6B4F;--green-d:#084D39;--gold:#F2A81D;--ink:#14201B;--mute:#5B6E64;--line:#E3EBE5;--tint:#E4F2EC;--goldt:#FDF1D6}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Hind Siliguri','Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
+body{font-family:'Noto Sans Bengali','Hind Siliguri','Inter',sans-serif;background:var(--bg);color:var(--ink);line-height:1.65;font-size:16px}
 html[lang="en"] body{font-family:'Inter','Hind Siliguri',sans-serif}
 a{color:inherit;text-decoration:none}
 .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
@@ -138,3 +139,7 @@ select.inp{appearance:auto}
 .grp{margin-top:14px}
 .grp h3{font-size:16px;margin-bottom:8px}
 .hide{display:none}
+
+.legal h2{font-size:20px;margin:22px 0 6px}
+.legal p{margin-bottom:10px}
+.legal a{color:var(--green);text-decoration:underline}
