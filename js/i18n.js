@@ -169,3 +169,16 @@ Object.assign(window.I18N.en, {
   'years': 'years', 'months': 'months', 'updated': 'Last updated: October 2026', 'src': 'Source',
   'empty.res': 'Enter your numbers and the result will show here.'
 });
+
+Object.assign(window.I18N.bn, {
+  'c7t': 'বেতনের আয়কর', 'c7d': 'মাসিক বেতন থেকে বছরের কর ও মাসিক কর্তন',
+  'c8t': 'ব্যবসার আয়কর', 'c8d': 'কোম্পানি ও ব্যক্তিগত ব্যবসার কর',
+  'cat.gen': 'সাধারণ (৪,০০,০০০ টাকা)', 'cat.women': 'নারী বা ৬৫+ বছর বয়সী (৪,৫০,০০০)',
+  'cat.disabled': 'প্রতিবন্ধী বা তৃতীয় লিঙ্গ (৫,২৫,০০০)', 'cat.ff': 'গেজেটেড যুদ্ধাহত মুক্তিযোদ্ধা বা জুলাই যোদ্ধা (৫,৫০,০০০)', 'cat.custom': 'নিজে দিন'
+});
+Object.assign(window.I18N.en, {
+  'c7t': 'Salary tax', 'c7d': 'Yearly tax and monthly deduction from your salary',
+  'c8t': 'Business tax', 'c8d': 'Tax for companies and sole proprietors',
+  'cat.gen': 'General (Tk 4,00,000)', 'cat.women': 'Woman or aged 65+ (Tk 4,50,000)',
+  'cat.disabled': 'Person with disability or third gender (Tk 5,25,000)', 'cat.ff': 'Gazetted war-wounded freedom fighter or July fighter (Tk 5,50,000)', 'cat.custom': 'Enter my own'
+});
