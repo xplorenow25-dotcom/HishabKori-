@@ -109,6 +109,9 @@
   var f=document.getElementById('reqf');
   f.addEventListener('submit',function(e){
     e.preventDefault();
+    var v=f.querySelector('input').value.trim();
+    if(!v)return;
+    window.location.href='mailto:'+Hishab.email+'?subject='+encodeURIComponent('Hishab tool request')+'&body='+encodeURIComponent(v);
     f.querySelector('input').value='';
     f.querySelector('button').textContent=Hishab.t('req.ok');
   });
