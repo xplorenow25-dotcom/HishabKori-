@@ -1,5 +1,5 @@
 (function () {
-  var EMAIL = 'YOUR-EMAIL@gmail.com'; // <-- change this to your real contact email
+  var EMAIL = 'etain390@gmail.com'; // <-- change this to your real contact email
   var LS = 'hishab_lang';
   var BD = '০১২৩৪৫৬৭৮৯';
   var TOOLS = [
