@@ -1,4 +1,5 @@
 (function () {
+  var EMAIL = 'YOUR-EMAIL@gmail.com'; // <-- change this to your real contact email
   var LS = 'hishab_lang';
   var BD = '০১২৩৪৫৬৭৮৯';
   var TOOLS = [
@@ -18,9 +19,10 @@
   var lang = getLang();
 
   function t(k) {
-    var d = window.I18N[lang];
-    if (d && d[k] !== undefined) return d[k];
-    return window.I18N.bn[k] !== undefined ? window.I18N.bn[k] : k;
+    var d = window.I18N[lang], v;
+    if (d && d[k] !== undefined) v = d[k];
+    else v = window.I18N.bn[k] !== undefined ? window.I18N.bn[k] : k;
+    return String(v).replace(/\{\{email\}\}/g, EMAIL);
   }
   function toBn(s) { return String(s).replace(/[0-9]/g, function (d) { return BD.charAt(d); }); }
   function toEn(s) { return String(s).replace(/[০-৯]/g, function (d) { return BD.indexOf(d); }); }
@@ -161,7 +163,7 @@
 
   window.Hishab = {
     lang: function () { return lang; }, t: t, toBn: toBn, toEn: toEn, groupIndian: groupIndian,
-    copyText: copyText, whatsapp: whatsapp, apply: apply, num: num, fmt: fmt, money: money, bindNum: bindNum
+    copyText: copyText, whatsapp: whatsapp, apply: apply, email: EMAIL, num: num, fmt: fmt, money: money, bindNum: bindNum
   };
 
   document.addEventListener('DOMContentLoaded', apply);
