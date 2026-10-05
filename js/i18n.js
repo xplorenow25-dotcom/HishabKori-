@@ -22,11 +22,7 @@ bn: {
   'w3t': 'বাংলা আগে', 'w3d': 'লক্ষ-কোটির সঠিক নিয়মে হিসাব।',
   'w4t': 'আপনার তথ্য নিরাপদ', 'w4d': 'সংখ্যা আপনার ফোন থেকে বের হয় না।',
 
-  'help.t': 'কোন কাজে সাহায্য করবে', 'help.s': 'প্রতিদিনের বাস্তব দরকার মেটাতে।',
-  'h1t': 'চেক লেখা', 'h1d': 'টাকার অংক সঙ্গে সঙ্গে কথায়, ভুল ছাড়া।',
-  'h2t': 'জমি কেনাবেচা', 'h2d': 'শতাংশ থেকে কাঠা, মোট দাম এক নজরে।',
-  'h3t': 'লোন তুলনা', 'h3d': 'কিস্তি দেখে ঠিক করুন কোন লোন আপনার জন্য।',
-  'h4t': 'রমজানের আগে যাকাত', 'h4d': 'সম্পদ লিখলেই যাকাতের পরিমাণ।',
+  'help.t': 'কর দেওয়া হোক সহজ', 'help.s': 'বেতনভোগী, ব্যবসায়ী বা সাধারণ করদাতা, সবার জন্য কর ক্যালকুলেটর।',
 
   'how.t': 'কীভাবে কাজ করে', 'how.s': 'তিন ধাপে হিসাব শেষ।',
   's1t': 'টুল বেছে নিন', 's1d': 'আপনার দরকারি ক্যালকুলেটর খুলুন।',
@@ -101,11 +97,7 @@ en: {
   'w3t': 'Bangla first', 'w3d': 'Correct lakh and crore rules.',
   'w4t': 'Your data stays yours', 'w4d': 'Numbers never leave your phone.',
 
-  'help.t': 'How it helps', 'help.s': 'For everyday real needs.',
-  'h1t': 'Writing a cheque', 'h1d': 'Amount in words instantly, with no mistakes.',
-  'h2t': 'Buying or selling land', 'h2d': 'Decimal to katha and the total price at a glance.',
-  'h3t': 'Comparing loans', 'h3d': 'See the installment and pick the right loan.',
-  'h4t': 'Zakat before Ramadan', 'h4d': 'Enter your assets and see the zakat amount.',
+  'help.t': 'Tax made simple', 'help.s': 'Tax calculators for employees, business owners and everyday taxpayers.',
 
   'how.t': 'How it works', 'how.s': 'Done in three steps.',
   's1t': 'Pick a tool', 's1d': 'Open the calculator you need.',
@@ -181,4 +173,25 @@ Object.assign(window.I18N.en, {
   'c8t': 'Business tax', 'c8d': 'Tax for companies and sole proprietors',
   'cat.gen': 'General (Tk 4,00,000)', 'cat.women': 'Woman or aged 65+ (Tk 4,50,000)',
   'cat.disabled': 'Person with disability or third gender (Tk 5,25,000)', 'cat.ff': 'Gazetted war-wounded freedom fighter or July fighter (Tk 5,50,000)', 'cat.custom': 'Enter my own'
+});
+
+Object.assign(window.I18N.bn, {
+  'h1t': 'চেক লেখা', 'h1d': 'টাকার অংক সঙ্গে সঙ্গে কথায়, ভুল ছাড়া।',
+  'h2t': 'জমি কেনাবেচা', 'h2d': 'শতাংশ থেকে কাঠা, মোট দাম এক নজরে।',
+  'h3t': 'লোন তুলনা', 'h3d': 'কিস্তি দেখে ঠিক করুন কোন লোন আপনার জন্য।',
+  'h4t': 'রমজানের আগে যাকাত', 'h4d': 'সম্পদ লিখলেই যাকাতের পরিমাণ।',
+  'h5t': 'বেতনের কর জানা', 'h5d': 'মাসিক বেতন থেকে বছরে কত কর, আগে থেকেই জানুন।',
+  'h6t': 'ব্যবসার কর হিসাব', 'h6d': 'কোম্পানি বা ব্যক্তিগত ব্যবসার মুনাফায় কত কর, দেখে নিন।',
+  'h7t': 'রিটার্ন জমার প্রস্তুতি', 'h7d': 'আয় কোন ধাপে পড়ে ও বিনিয়োগ রেয়াতে কত কমে, জেনে নিন।',
+  'h8t': 'সঞ্চয়ের সুদ ও কর', 'h8d': 'DPS বা FDR-এ কর কাটার পর হাতে কত থাকে, জানুন।'
+});
+Object.assign(window.I18N.en, {
+  'h1t': 'Writing a cheque', 'h1d': 'Amount in words instantly, with no mistakes.',
+  'h2t': 'Buying or selling land', 'h2d': 'Decimal to katha and the total price at a glance.',
+  'h3t': 'Comparing loans', 'h3d': 'See the installment and pick the right loan.',
+  'h4t': 'Zakat before Ramadan', 'h4d': 'Enter your assets and see the zakat amount.',
+  'h5t': 'Knowing your salary tax', 'h5d': 'See your yearly tax from your monthly salary before you file.',
+  'h6t': 'Business tax planning', 'h6d': 'See the tax on a company or sole proprietor profit.',
+  'h7t': 'Getting ready to file your return', 'h7d': 'See which slab you fall in and how much the investment rebate saves.',
+  'h8t': 'Savings after tax', 'h8d': 'See what a DPS or FDR pays you after tax is deducted.'
 });
