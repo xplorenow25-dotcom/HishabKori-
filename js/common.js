@@ -71,20 +71,67 @@
 
   var LOGO = '<svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="16" fill="#0B6B4F"/><rect x="12" y="12" width="17" height="17" rx="5" fill="#fff" fill-opacity=".9"/><rect x="35" y="12" width="17" height="17" rx="5" fill="#fff" fill-opacity=".55"/><rect x="12" y="35" width="17" height="17" rx="5" fill="#fff" fill-opacity=".55"/><rect x="35" y="35" width="17" height="17" rx="5" fill="#F2A81D"/><rect x="39" y="40" width="9" height="2.6" rx="1.3" fill="#0B6B4F"/><rect x="39" y="45" width="9" height="2.6" rx="1.3" fill="#0B6B4F"/></svg>';
 
+  var navBound = false;
+  function closeMenu() {
+    var p = document.getElementById('mpanel'), b = document.querySelector('.burger');
+    if (p) p.classList.remove('open');
+    if (b) { b.setAttribute('aria-expanded', 'false'); var i = b.querySelector('i'); if (i) i.className = 'ti ti-menu-2'; }
+  }
+  function bindNav() {
+    if (navBound) return; navBound = true;
+    document.addEventListener('click', function (e) {
+      var tg = e.target, b = tg.closest ? tg.closest('.burger') : null;
+      if (b) {
+        var p = document.getElementById('mpanel');
+        if (!p.classList.contains('open')) { p.classList.add('open'); b.setAttribute('aria-expanded', 'true'); b.querySelector('i').className = 'ti ti-x'; }
+        else closeMenu();
+        return;
+      }
+      if (!(tg.closest && tg.closest('.mpanel'))) closeMenu();
+    });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  }
+
   function renderHeader() {
     var el = document.getElementById('site-header');
     if (!el) return;
     var home = document.body.dataset.page === 'home';
-    var base = home ? '' : withLang('index.html');
     var logoHref = home ? '#' : withLang('index.html');
-    var m = home ? '#' : withLang('index.html') ;
     function lk(h, k) { return '<a href="' + (home ? h : withLang('index.html' + h)) + '">' + t(k) + '</a>'; }
+    var tools = TOOLS.filter(function (x) { return x.live; }).map(function (x) {
+      return '<a class="mlink" href="' + withLang(x.href) + '"><span class="mi' + (x.gold ? ' g' : '') + '"><i class="ti ' + x.icon + '"></i></span><span>' +
+        t('c' + x.n + 't') + '</span><i class="ti ti-chevron-right ar"></i></a>';
+    }).join('');
+    function more(h, icon, k) {
+      return '<a class="mlink" href="' + withLang(h) + '"><span class="mi"><i class="ti ' + icon + '"></i></span><span>' + t(k) + '</span><i class="ti ti-chevron-right ar"></i></a>';
+    }
     el.innerHTML = '<div class="wrap nav"><a class="logo" href="' + logoHref + '">' + LOGO + '<span>হিসাব</span></a>' +
-      '<nav class="menu">' + lk('#tools', 'nav.tools') + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') +
-      '<div class="tg" role="group" aria-label="Language"><button data-l="bn" class="' + (lang === 'bn' ? 'on' : '') + '">বাং</button><button data-l="en" class="' + (lang === 'en' ? 'on' : '') + '">EN</button></div></nav></div>';
+      '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
+      '<div class="tg" role="group" aria-label="Language"><button type="button" data-l="bn" class="' + (lang === 'bn' ? 'on' : '') + '">বাং</button><button type="button" data-l="en" class="' + (lang === 'en' ? 'on' : '') + '">EN</button></div>' +
+      '<button type="button" class="burger" aria-label="' + t('menu.open') + '" aria-expanded="false" aria-controls="mpanel"><i class="ti ti-menu-2"></i></button></div></div>' +
+      '<div class="mpanel" id="mpanel"><div class="in"><div class="mp-t">' + t('menu.all') + '</div>' + tools +
+      '<div class="mp-sep"></div>' + more('about.html', 'ti-info-circle', 'f.about') + more('contact.html', 'ti-mail', 'f.contact') + '</div></div>';
     el.querySelectorAll('.tg button').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.dataset.l); });
     });
+    bindNav();
+  }
+
+  function renderBack() {
+    var pg = document.body.dataset.page;
+    if (pg !== 'tool' && pg !== 'legal') return;
+    var bc = document.querySelector('.bc');
+    if (!bc) return;
+    var b = bc.querySelector('.back');
+    if (!b) {
+      b = document.createElement('a'); b.className = 'back';
+      bc.insertBefore(b, bc.firstChild);
+      var sp = document.createElement('span'); sp.className = 'crumb';
+      while (b.nextSibling) sp.appendChild(b.nextSibling);
+      bc.appendChild(sp);
+    }
+    b.href = withLang('index.html');
+    b.innerHTML = '<i class="ti ti-arrow-left"></i><span>' + t('back') + '</span>';
   }
 
   function renderFooter() {
@@ -129,7 +176,7 @@
     var md = document.querySelector('meta[name="description"]');
     if (md && b.dataset.desc) md.setAttribute('content', t(b.dataset.desc));
     document.querySelectorAll('a[data-int]').forEach(function (a) { a.href = withLang(a.dataset.int); });
-    renderHeader(); renderFooter(); renderAds();
+    renderHeader(); renderFooter(); renderAds(); renderBack();
     if (b.dataset.tool) renderRelated(parseInt(b.dataset.tool, 10));
     document.dispatchEvent(new Event('langchange'));
   }
