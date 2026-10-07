@@ -39,43 +39,43 @@ content:
         options:
           values:
             - name: tax
-              label: à¦†à¦¯à¦¼à¦•à¦° (Tax)
+              label: Tax
             - name: banking
-              label: à¦¬à§à¦¯à¦¾à¦‚à¦• à¦“ à¦¸à¦žà§à¦šà¦¯à¦¼ (Banking)
+              label: Banking and savings
             - name: land
-              label: à¦œà¦®à¦¿ (Land)
+              label: Land
             - name: zakat
-              label: à¦¯à¦¾à¦•à¦¾à¦¤ (Zakat)
+              label: Zakat
             - name: general
-              label: à¦¸à¦¾à¦§à¦¾à¦°à¦£ (General)
+              label: General
       - name: calculator
         label: Related calculator (shows a button at the end)
         type: select
         options:
           values:
             - name: salary-tax
-              label: à¦¬à§‡à¦¤à¦¨à§‡à¦° à¦†à¦¯à¦¼à¦•à¦°
+              label: Salary tax
             - name: business-tax
-              label: à¦¬à§à¦¯à¦¬à¦¸à¦¾à¦° à¦†à¦¯à¦¼à¦•à¦°
+              label: Business tax
             - name: income-tax
-              label: à¦†à¦¯à¦¼à¦•à¦° à¦•à§à¦¯à¦¾à¦²à¦•à§à¦²à§‡à¦Ÿà¦°
+              label: Income tax
             - name: loan-emi
-              label: à¦²à§‹à¦¨ EMI
+              label: Loan EMI
             - name: dps-fdr
-              label: DPS à¦“ FDR
+              label: DPS and FDR
             - name: zakat
-              label: à¦¯à¦¾à¦•à¦¾à¦¤
+              label: Zakat calculator
             - name: land-converter
-              label: à¦œà¦®à¦¿à¦° à¦¹à¦¿à¦¸à¦¾à¦¬
+              label: Land converter
             - name: taka-in-words
-              label: à¦Ÿà¦¾à¦•à¦¾ à¦•à¦¥à¦¾à¦¯à¦¼
+              label: Taka in words
       - name: lang
         label: Language
         type: select
         options:
           values:
             - name: bn
-              label: à¦¬à¦¾à¦‚à¦²à¦¾
+              label: Bangla
             - name: en
               label: English
       - name: image
