@@ -195,3 +195,9 @@ Object.assign(window.I18N.en, {
   'h7t': 'Getting ready to file your return', 'h7d': 'See which slab you fall in and how much the investment rebate saves.',
   'h8t': 'Savings after tax', 'h8d': 'See what a DPS or FDR pays you after tax is deducted.'
 });
+
+Object.assign(window.I18N.bn, { 'back': 'হোমে ফিরুন', 'menu.all': 'সব ক্যালকুলেটর', 'menu.open': 'মেনু খুলুন' });
+Object.assign(window.I18N.en, { 'back': 'Back to home', 'menu.all': 'All calculators', 'menu.open': 'Open menu' });
+
+Object.assign(window.I18N.bn, { 'nav.blog': 'ব্লগ', 'blog.latest': 'সাম্প্রতিক লেখা', 'blog.all': 'সব লেখা দেখুন', 'guides.t': 'সম্পর্কিত গাইড' });
+Object.assign(window.I18N.en, { 'nav.blog': 'Blog', 'blog.latest': 'Latest articles', 'blog.all': 'See all articles', 'guides.t': 'Related guides' });

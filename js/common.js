@@ -1,5 +1,7 @@
 (function () {
   var EMAIL = 'YOUR-EMAIL@gmail.com'; // <-- change this to your real contact email
+  var ROOT = (document.body && document.body.dataset.root) || '';
+  var FORCED = document.body && document.body.dataset.lang;
   var LS = 'hishab_lang';
   var BD = '০১২৩৪৫৬৭৮৯';
   var TOOLS = [
@@ -14,6 +16,7 @@
   ];
 
   function getLang() {
+    if (FORCED === 'bn' || FORCED === 'en') return FORCED;
     try { var p = new URLSearchParams(location.search).get('lang'); if (p === 'bn' || p === 'en') return p; } catch (e) {}
     try { var s = localStorage.getItem(LS); if (s === 'bn' || s === 'en') return s; } catch (e) {}
     return 'bn';
@@ -33,11 +36,10 @@
     return s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + s.slice(-3);
   }
   function withLang(h) {
+    if (!/^(\/|https?:|mailto:|#)/.test(h)) h = ROOT + h;
     var p = h.split('#');
     return p[0] + '?lang=' + lang + (p[1] ? '#' + p[1] : '');
   }
-
-
   function num(v) {
     v = toEn(String(v)).replace(/[,\s]/g, '');
     if (v === '' || v === '.' || !/^\d*\.?\d*$/.test(v)) return null;
@@ -106,11 +108,11 @@
       return '<a class="mlink" href="' + withLang(h) + '"><span class="mi"><i class="ti ' + icon + '"></i></span><span>' + t(k) + '</span><i class="ti ti-chevron-right ar"></i></a>';
     }
     el.innerHTML = '<div class="wrap nav"><a class="logo" href="' + logoHref + '">' + LOGO + '<span>হিসাব</span></a>' +
-      '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
+      '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + '<a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a>' + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
       '<div class="tg" role="group" aria-label="Language"><button type="button" data-l="bn" class="' + (lang === 'bn' ? 'on' : '') + '">বাং</button><button type="button" data-l="en" class="' + (lang === 'en' ? 'on' : '') + '">EN</button></div>' +
       '<button type="button" class="burger" aria-label="' + t('menu.open') + '" aria-expanded="false" aria-controls="mpanel"><i class="ti ti-menu-2"></i></button></div></div>' +
       '<div class="mpanel" id="mpanel"><div class="in"><div class="mp-t">' + t('menu.all') + '</div>' + tools +
-      '<div class="mp-sep"></div>' + more('about.html', 'ti-info-circle', 'f.about') + more('contact.html', 'ti-mail', 'f.contact') + '</div></div>';
+      '<div class="mp-sep"></div><a class="mlink" href="' + ROOT + 'blog/"><span class="mi"><i class="ti ti-article"></i></span><span>' + t('nav.blog') + '</span><i class="ti ti-chevron-right ar"></i></a>' + more('about.html', 'ti-info-circle', 'f.about') + more('contact.html', 'ti-mail', 'f.contact') + '</div></div>';
     el.querySelectorAll('.tg button').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.dataset.l); });
     });
@@ -146,7 +148,7 @@
       '<div><a class="logo" href="' + withLang('index.html') + '">' + LOGO + '<span>হিসাব</span></a><p>' + t('f.blurb') + '</p>' +
       '<a href="' + wa + '" target="_blank" rel="noopener" style="margin-top:8px;color:#F2A81D"><i class="ti ti-brand-whatsapp"></i> ' + t('f.share') + '</a></div>' +
       '<div><h4>' + t('f.tools') + '</h4>' + tl + '</div>' +
-      '<div><h4>' + t('f.company') + '</h4><a href="' + withLang('about.html') + '">' + t('f.about') + '</a><a href="' + withLang('contact.html') + '">' + t('f.contact') + '</a></div>' +
+      '<div><h4>' + t('f.company') + '</h4><a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a><a href="' + withLang('about.html') + '">' + t('f.about') + '</a><a href="' + withLang('contact.html') + '">' + t('f.contact') + '</a></div>' +
       '<div><h4>' + t('f.legal') + '</h4><a href="' + withLang('privacy.html') + '">' + t('f.privacy') + '</a><a href="' + withLang('terms.html') + '">' + t('f.terms') + '</a></div>' +
       '</div><div class="disc">' + t('f.disc') + '<br>' + t('f.copy') + '</div></div>';
   }
