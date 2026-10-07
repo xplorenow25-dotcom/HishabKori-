@@ -1,1 +1,93 @@
-
+media:
+  input: images/blog
+  output: /images/blog
+content:
+  - name: posts
+    label: Blog posts
+    type: collection
+    path: content/blog
+    filename: "{primary}.md"
+    view:
+      primary: slug
+      fields: [title, category, date]
+      sort: date
+      order: desc
+    fields:
+      - name: slug
+        label: Link name (English letters and dashes only, e.g. fdr-interest-tax)
+        type: string
+        required: true
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: description
+        label: Short summary (shown on Google, 140 to 160 characters)
+        type: text
+        required: true
+      - name: date
+        label: Publish date
+        type: date
+        required: true
+      - name: updated
+        label: Last updated date (optional)
+        type: date
+      - name: category
+        label: Category
+        type: select
+        required: true
+        options:
+          values:
+            - name: tax
+              label: à¦†à¦¯à¦¼à¦•à¦° (Tax)
+            - name: banking
+              label: à¦¬à§à¦¯à¦¾à¦‚à¦• à¦“ à¦¸à¦žà§à¦šà¦¯à¦¼ (Banking)
+            - name: land
+              label: à¦œà¦®à¦¿ (Land)
+            - name: zakat
+              label: à¦¯à¦¾à¦•à¦¾à¦¤ (Zakat)
+            - name: general
+              label: à¦¸à¦¾à¦§à¦¾à¦°à¦£ (General)
+      - name: calculator
+        label: Related calculator (shows a button at the end)
+        type: select
+        options:
+          values:
+            - name: salary-tax
+              label: à¦¬à§‡à¦¤à¦¨à§‡à¦° à¦†à¦¯à¦¼à¦•à¦°
+            - name: business-tax
+              label: à¦¬à§à¦¯à¦¬à¦¸à¦¾à¦° à¦†à¦¯à¦¼à¦•à¦°
+            - name: income-tax
+              label: à¦†à¦¯à¦¼à¦•à¦° à¦•à§à¦¯à¦¾à¦²à¦•à§à¦²à§‡à¦Ÿà¦°
+            - name: loan-emi
+              label: à¦²à§‹à¦¨ EMI
+            - name: dps-fdr
+              label: DPS à¦“ FDR
+            - name: zakat
+              label: à¦¯à¦¾à¦•à¦¾à¦¤
+            - name: land-converter
+              label: à¦œà¦®à¦¿à¦° à¦¹à¦¿à¦¸à¦¾à¦¬
+            - name: taka-in-words
+              label: à¦Ÿà¦¾à¦•à¦¾ à¦•à¦¥à¦¾à¦¯à¦¼
+      - name: lang
+        label: Language
+        type: select
+        options:
+          values:
+            - name: bn
+              label: à¦¬à¦¾à¦‚à¦²à¦¾
+            - name: en
+              label: English
+      - name: image
+        label: Cover photo (optional)
+        type: image
+      - name: author
+        label: Author name (optional)
+        type: string
+      - name: draft
+        label: Draft (tick to keep it hidden)
+        type: boolean
+      - name: body
+        label: Article
+        type: rich-text
+        required: true
