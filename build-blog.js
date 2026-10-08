@@ -92,7 +92,11 @@ function parseFM(src) {
       const items = [];
       while (i + 1 < lines.length && /^\s*-\s+/.test(lines[i + 1])) items.push(unq(lines[++i].replace(/^\s*-\s+/, '')));
       val = items.length ? items : '';
-    } else val = unq(val);
+    } else {
+      // Pages CMS wraps long values onto indented continuation lines; join them back together
+      while (i + 1 < lines.length && /^\s+\S/.test(lines[i + 1]) && !/^\s*-\s+/.test(lines[i + 1])) val += ' ' + lines[++i].trim();
+      val = unq(val);
+    }
     if (val === 'true') val = true;
     if (val === 'false') val = false;
     data[key] = val;
