@@ -100,23 +100,55 @@
     var home = document.body.dataset.page === 'home';
     var logoHref = home ? '#' : withLang('index.html');
     function lk(h, k) { return '<a href="' + (home ? h : withLang('index.html' + h)) + '">' + t(k) + '</a>'; }
-    var tools = TOOLS.filter(function (x) { return x.live; }).map(function (x) {
-      return '<a class="mlink" href="' + withLang(x.href) + '"><span class="mi' + (x.gold ? ' g' : '') + '"><i class="ti ' + x.icon + '"></i></span><span>' +
-        t('c' + x.n + 't') + '</span><i class="ti ti-chevron-right ar"></i></a>';
-    }).join('');
-    function more(h, icon, k) {
-      return '<a class="mlink" href="' + withLang(h) + '"><span class="mi"><i class="ti ' + icon + '"></i></span><span>' + t(k) + '</span><i class="ti ti-chevron-right ar"></i></a>';
+    function row(href, icon, label) {
+      return '<a class="mlink" href="' + href + '"><span class="mi"><i class="ti ' + icon + '"></i></span><span>' + label + '</span><i class="ti ti-chevron-right ar"></i></a>';
     }
     el.innerHTML = '<div class="wrap nav"><a class="logo" href="' + logoHref + '">' + LOGO + '<span>হিসাব</span></a>' +
       '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + '<a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a>' + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
       '<div class="tg" role="group" aria-label="Language"><button type="button" data-l="bn" class="' + (lang === 'bn' ? 'on' : '') + '">বাং</button><button type="button" data-l="en" class="' + (lang === 'en' ? 'on' : '') + '">EN</button></div>' +
       '<button type="button" class="burger" aria-label="' + t('menu.open') + '" aria-expanded="false" aria-controls="mpanel"><i class="ti ti-menu-2"></i></button></div></div>' +
-      '<div class="mpanel" id="mpanel"><div class="in"><div class="mp-t">' + t('menu.all') + '</div>' + tools +
-      '<div class="mp-sep"></div><a class="mlink" href="' + ROOT + 'blog/"><span class="mi"><i class="ti ti-article"></i></span><span>' + t('nav.blog') + '</span><i class="ti ti-chevron-right ar"></i></a>' + more('about.html', 'ti-info-circle', 'f.about') + more('contact.html', 'ti-mail', 'f.contact') + '</div></div>';
+      '<div class="mpanel" id="mpanel"><div class="in">' +
+      row(withLang('index.html'), 'ti-home', t('tw.home')) + row(ROOT + 'blog/', 'ti-article', t('nav.blog')) +
+      row(withLang('about.html'), 'ti-info-circle', t('f.about')) + row(withLang('contact.html'), 'ti-mail', t('f.contact')) +
+      '</div></div>';
     el.querySelectorAll('.tg button').forEach(function (b) {
       b.addEventListener('click', function () { setLang(b.dataset.l); });
     });
     bindNav();
+  }
+
+  /* ---------- cookie consent ----------
+     Choice is saved in localStorage for 12 months. Ads load for everyone. The choice only decides
+     personalisation: when Hishab.consent() === 'rejected', request non-personalised ads
+     (AdSense: set requestNonPersonalizedAds to 1). Listen for the 'hishab-consent' event for changes. */
+  var CK = 'hishab_consent', consentInit = false;
+  function getConsent() {
+    try {
+      var v = JSON.parse(localStorage.getItem(CK) || 'null');
+      if (v && v.choice && (Date.now() - v.ts) < 31536000000) return v.choice;
+    } catch (e) {}
+    return null;
+  }
+  function saveConsent(c) {
+    try { localStorage.setItem(CK, JSON.stringify({ v: 1, choice: c, ts: Date.now() })); } catch (e) {}
+    window.HISHAB_CONSENT = c;
+    try { document.dispatchEvent(new CustomEvent('hishab-consent', { detail: c })); } catch (e) {}
+  }
+  function showConsent(force) {
+    var old = document.getElementById('ckb');
+    if (old && old.parentNode) old.parentNode.removeChild(old);
+    if (!force && getConsent()) return;
+    var d = document.createElement('div');
+    d.id = 'ckb'; d.className = 'ckb';
+    d.setAttribute('role', 'dialog'); d.setAttribute('aria-labelledby', 'ckt');
+    d.innerHTML = '<div class="ckh"><span class="cki"><i class="ti ti-cookie"></i></span><b id="ckt">' + t('ck.title') + '</b></div>' +
+      '<p>' + t('ck.text') + ' <a href="' + withLang('privacy.html') + '">' + t('ck.policy') + '</a></p>' +
+      '<div class="ckbt"><button type="button" class="ck-no">' + t('ck.reject') + '</button><button type="button" class="ck-yes">' + t('ck.accept') + '</button></div>';
+    document.body.appendChild(d);
+    function close(c) { saveConsent(c); if (d.parentNode) d.parentNode.removeChild(d); }
+    d.querySelector('.ck-yes').addEventListener('click', function () { close('accepted'); });
+    d.querySelector('.ck-no').addEventListener('click', function () { close('rejected'); });
+    (window.requestAnimationFrame || setTimeout)(function () { d.className = 'ckb show'; });
   }
 
   function renderBack() {
@@ -149,8 +181,11 @@
       '<a href="' + wa + '" target="_blank" rel="noopener" style="margin-top:8px;color:#F2A81D"><i class="ti ti-brand-whatsapp"></i> ' + t('f.share') + '</a></div>' +
       '<div><h4>' + t('f.tools') + '</h4>' + tl + '</div>' +
       '<div><h4>' + t('f.company') + '</h4><a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a><a href="' + withLang('about.html') + '">' + t('f.about') + '</a><a href="' + withLang('contact.html') + '">' + t('f.contact') + '</a></div>' +
-      '<div><h4>' + t('f.legal') + '</h4><a href="' + withLang('privacy.html') + '">' + t('f.privacy') + '</a><a href="' + withLang('terms.html') + '">' + t('f.terms') + '</a></div>' +
+      '<div><h4>' + t('f.legal') + '</h4><a href="' + withLang('privacy.html') + '">' + t('f.privacy') + '</a><a href="' + withLang('terms.html') + '">' + t('f.terms') + '</a><a href="#" data-cookie>' + t('ck.settings') + '</a></div>' +
       '</div><div class="disc">' + t('f.disc') + '<br>' + t('f.copy') + '</div></div>';
+    el.querySelectorAll('[data-cookie]').forEach(function (a) {
+      a.addEventListener('click', function (e) { e.preventDefault(); showConsent(true); });
+    });
   }
 
   function renderAds() {
@@ -179,6 +214,8 @@
     if (md && b.dataset.desc) md.setAttribute('content', t(b.dataset.desc));
     document.querySelectorAll('a[data-int]').forEach(function (a) { a.href = withLang(a.dataset.int); });
     renderHeader(); renderFooter(); renderAds(); renderBack();
+    if (document.getElementById('ckb')) showConsent(true);
+    else if (!consentInit) { consentInit = true; showConsent(false); }
     if (b.dataset.tool) renderRelated(parseInt(b.dataset.tool, 10));
     document.dispatchEvent(new Event('langchange'));
   }
@@ -214,7 +251,7 @@
 
   window.Hishab = {
     lang: function () { return lang; }, t: t, toBn: toBn, toEn: toEn, groupIndian: groupIndian,
-    copyText: copyText, whatsapp: whatsapp, apply: apply, email: EMAIL, num: num, fmt: fmt, money: money, bindNum: bindNum
+    copyText: copyText, whatsapp: whatsapp, apply: apply, email: EMAIL, consent: getConsent, reopenConsent: function () { showConsent(true); }, num: num, fmt: fmt, money: money, bindNum: bindNum
   };
 
   document.addEventListener('DOMContentLoaded', apply);

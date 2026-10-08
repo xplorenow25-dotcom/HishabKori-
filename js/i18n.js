@@ -201,3 +201,14 @@ Object.assign(window.I18N.en, { 'back': 'Back to home', 'menu.all': 'All calcula
 
 Object.assign(window.I18N.bn, { 'nav.blog': 'ব্লগ', 'blog.latest': 'সাম্প্রতিক লেখা', 'blog.all': 'সব লেখা দেখুন', 'guides.t': 'সম্পর্কিত গাইড' });
 Object.assign(window.I18N.en, { 'nav.blog': 'Blog', 'blog.latest': 'Latest articles', 'blog.all': 'See all articles', 'guides.t': 'Related guides' });
+
+Object.assign(window.I18N.bn, {
+  'ck.title': 'আপনার গোপনীয়তা আমাদের কাছে গুরুত্বপূর্ণ',
+  'ck.text': 'হিসাব আপনার পছন্দের ভাষা মনে রাখতে ব্রাউজারে সামান্য তথ্য রাখে। বিজ্ঞাপন সাইটটি ফ্রি রাখতে সাহায্য করে। গ্রহণ করলে বিজ্ঞাপন আপনার পছন্দ অনুযায়ী দেখানো হতে পারে, প্রত্যাখ্যান করলেও বিজ্ঞাপন দেখবেন, তবে তা ব্যক্তিগতকৃত হবে না। পছন্দ যেকোনো সময় বদলাতে পারবেন।',
+  'ck.accept': 'গ্রহণ করুন', 'ck.reject': 'প্রত্যাখ্যান', 'ck.policy': 'গোপনীয়তা নীতি', 'ck.settings': 'কুকি সেটিংস'
+});
+Object.assign(window.I18N.en, {
+  'ck.title': 'Your privacy matters',
+  'ck.text': 'Hishab stores a small piece of data in your browser to remember your language. Ads help keep Hishab free. If you accept, ads may be personalised to your interests. If you reject, you will still see ads, but they will not be personalised. You can change your choice at any time.',
+  'ck.accept': 'Accept', 'ck.reject': 'Reject', 'ck.policy': 'Privacy policy', 'ck.settings': 'Cookie settings'
+});
