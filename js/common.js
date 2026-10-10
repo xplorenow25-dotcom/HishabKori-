@@ -15,12 +15,7 @@
     { n: 8, href: 'business-tax.html', icon: 'ti-building-store', live: true, gold: true }
   ];
 
-  function getLang() {
-    if (FORCED === 'bn' || FORCED === 'en') return FORCED;
-    try { var p = new URLSearchParams(location.search).get('lang'); if (p === 'bn' || p === 'en') return p; } catch (e) {}
-    try { var s = localStorage.getItem(LS); if (s === 'bn' || s === 'en') return s; } catch (e) {}
-    return 'bn';
-  }
+  function getLang() { return FORCED === 'en' ? 'en' : 'bn'; }
   var lang = getLang();
 
   function t(k) {
@@ -36,9 +31,13 @@
     return s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + s.slice(-3);
   }
   function withLang(h) {
-    if (!/^(\/|https?:|mailto:|#)/.test(h)) h = ROOT + h;
-    var p = h.split('#');
-    return p[0] + '?lang=' + lang + (p[1] ? '#' + p[1] : '');
+    if (/^(https?:|mailto:|tel:|#)/.test(h)) return h;
+    var hash = '', i = h.indexOf('#');
+    if (i > -1) { hash = h.slice(i); h = h.slice(0, i); }
+    if (h.charAt(0) === '/') return h + hash;
+    h = h.replace(/\.html$/, '');
+    if (h === 'index') h = '';
+    return (lang === 'en' ? '/en/' : '/') + h + hash;
   }
   function num(v) {
     v = toEn(String(v)).replace(/[,\s]/g, '');
@@ -104,11 +103,11 @@
       return '<a class="mlink" href="' + href + '"><span class="mi"><i class="ti ' + icon + '"></i></span><span>' + label + '</span><i class="ti ti-chevron-right ar"></i></a>';
     }
     el.innerHTML = '<div class="wrap nav"><a class="logo" href="' + logoHref + '">' + LOGO + '<span>হিসাব</span></a>' +
-      '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + '<a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a>' + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
+      '<div class="nav-r"><nav class="menu">' + lk('#tools', 'nav.tools') + '<a href="' + withLang('blog/') + '">' + t('nav.blog') + '</a>' + lk('#why', 'nav.why') + lk('#faq', 'nav.faq') + '</nav>' +
       '<div class="tg" role="group" aria-label="Language"><button type="button" data-l="bn" class="' + (lang === 'bn' ? 'on' : '') + '">বাং</button><button type="button" data-l="en" class="' + (lang === 'en' ? 'on' : '') + '">EN</button></div>' +
       '<button type="button" class="burger" aria-label="' + t('menu.open') + '" aria-expanded="false" aria-controls="mpanel"><i class="ti ti-menu-2"></i></button></div></div>' +
       '<div class="mpanel" id="mpanel"><div class="in">' +
-      row(withLang('index.html'), 'ti-home', t('tw.home')) + row(ROOT + 'blog/', 'ti-article', t('nav.blog')) +
+      row(withLang('index.html'), 'ti-home', t('tw.home')) + row(withLang('blog/'), 'ti-article', t('nav.blog')) +
       row(withLang('about.html'), 'ti-info-circle', t('f.about')) + row(withLang('contact.html'), 'ti-mail', t('f.contact')) +
       '</div></div>';
     el.querySelectorAll('.tg button').forEach(function (b) {
@@ -180,7 +179,7 @@
       '<div><a class="logo" href="' + withLang('index.html') + '">' + LOGO + '<span>হিসাব</span></a><p>' + t('f.blurb') + '</p>' +
       '<a href="' + wa + '" target="_blank" rel="noopener" style="margin-top:8px;color:#F2A81D"><i class="ti ti-brand-whatsapp"></i> ' + t('f.share') + '</a></div>' +
       '<div><h4>' + t('f.tools') + '</h4>' + tl + '</div>' +
-      '<div><h4>' + t('f.company') + '</h4><a href="' + ROOT + 'blog/">' + t('nav.blog') + '</a><a href="' + withLang('about.html') + '">' + t('f.about') + '</a><a href="' + withLang('contact.html') + '">' + t('f.contact') + '</a></div>' +
+      '<div><h4>' + t('f.company') + '</h4><a href="' + withLang('blog/') + '">' + t('nav.blog') + '</a><a href="' + withLang('about.html') + '">' + t('f.about') + '</a><a href="' + withLang('contact.html') + '">' + t('f.contact') + '</a></div>' +
       '<div><h4>' + t('f.legal') + '</h4><a href="' + withLang('privacy.html') + '">' + t('f.privacy') + '</a><a href="' + withLang('terms.html') + '">' + t('f.terms') + '</a><a href="#" data-cookie>' + t('ck.settings') + '</a></div>' +
       '</div><div class="disc">' + t('f.disc') + '<br>' + t('f.copy') + '</div></div>';
     el.querySelectorAll('[data-cookie]').forEach(function (a) {
@@ -214,6 +213,11 @@
     if (md && b.dataset.desc) md.setAttribute('content', t(b.dataset.desc));
     document.querySelectorAll('a[data-int]').forEach(function (a) { a.href = withLang(a.dataset.int); });
     renderHeader(); renderFooter(); renderAds(); renderBack();
+    if (document.body.dataset.page === 'tool' && !window.__rptLoad) {
+      window.__rptLoad = true;
+      var rs = document.createElement('script'), cs = document.querySelector('script[src*="common.js"]');
+      rs.src = cs ? cs.src.replace(/common\.js.*$/, 'report.js') : ROOT + 'js/report.js'; document.body.appendChild(rs);
+    }
     if (document.getElementById('ckb')) showConsent(true);
     else if (!consentInit) { consentInit = true; showConsent(false); }
     if (b.dataset.tool) renderRelated(parseInt(b.dataset.tool, 10));
@@ -221,10 +225,9 @@
   }
 
   function setLang(l) {
-    lang = l;
-    try { localStorage.setItem(LS, l); } catch (e) {}
-    try { var u = new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null, '', u); } catch (e) {}
-    apply();
+    if (l === lang) return;
+    var d = document.body.dataset, alt = l === 'en' ? d.altEn : d.altBn;
+    location.href = alt || (l === 'en' ? '/en/' : '/');
   }
 
   function copyText(text, btn, keepLabel) {

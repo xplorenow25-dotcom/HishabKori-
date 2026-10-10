@@ -212,3 +212,14 @@ Object.assign(window.I18N.en, {
   'ck.text': 'Hishab stores a small piece of data in your browser to remember your language. Ads help keep Hishab free. If you accept, ads may be personalised to your interests. If you reject, you will still see ads, but they will not be personalised. You can change your choice at any time.',
   'ck.accept': 'Accept', 'ck.reject': 'Reject', 'ck.policy': 'Privacy policy', 'ck.settings': 'Cookie settings'
 });
+
+Object.assign(window.I18N.bn, {
+  'pdf.btn': 'PDF ডাউনলোড', 'pdf.hint': 'যে উইন্ডো খুলবে সেখানে "PDF হিসেবে সংরক্ষণ করুন" বাছুন।',
+  'pdf.empty': 'আগে সংখ্যা লিখুন, তারপর PDF নিন।', 'pdf.inputs': 'আপনার দেওয়া তথ্য', 'pdf.yes': 'হ্যাঁ',
+  'pdf.generated': 'তৈরি হয়েছে', 'pdf.by': 'হিসাব দিয়ে তৈরি', 'pdf.tag': 'সব হিসাব, এক জায়গায়'
+});
+Object.assign(window.I18N.en, {
+  'pdf.btn': 'Download PDF', 'pdf.hint': 'In the window that opens, choose "Save as PDF".',
+  'pdf.empty': 'Enter your numbers first, then download the PDF.', 'pdf.inputs': 'Your inputs', 'pdf.yes': 'Yes',
+  'pdf.generated': 'Generated', 'pdf.by': 'Created with Hishab', 'pdf.tag': 'All your calculations, one place'
+});
