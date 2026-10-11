@@ -15,7 +15,12 @@
     { n: 8, href: 'business-tax.html', icon: 'ti-building-store', live: true, gold: true }
   ];
 
-  function getLang() { return FORCED === 'en' ? 'en' : 'bn'; }
+  function getLang() {
+    if (FORCED === 'bn' || FORCED === 'en') return FORCED;
+    try { var p = new URLSearchParams(location.search).get('lang'); if (p === 'bn' || p === 'en') return p; } catch (e) {}
+    try { var s = localStorage.getItem(LS); if (s === 'bn' || s === 'en') return s; } catch (e) {}
+    return 'bn';
+  }
   var lang = getLang();
 
   function t(k) {
@@ -31,13 +36,11 @@
     return s.slice(0, -3).replace(/\B(?=(\d{2})+(?!\d))/g, ',') + ',' + s.slice(-3);
   }
   function withLang(h) {
-    if (/^(https?:|mailto:|tel:|#)/.test(h)) return h;
-    var hash = '', i = h.indexOf('#');
-    if (i > -1) { hash = h.slice(i); h = h.slice(0, i); }
-    if (h.charAt(0) === '/') return h + hash;
-    h = h.replace(/\.html$/, '');
-    if (h === 'index') h = '';
-    return (lang === 'en' ? '/en/' : '/') + h + hash;
+    if (/^(https?:|mailto:|tel:)/.test(h)) return h;
+    if (h.charAt(0) === '#') return h;
+    if (h.charAt(0) !== '/') h = ROOT + h;
+    var p = h.split('#');
+    return p[0] + '?lang=' + lang + (p[1] ? '#' + p[1] : '');
   }
   function num(v) {
     v = toEn(String(v)).replace(/[,\s]/g, '');
@@ -225,9 +228,10 @@
   }
 
   function setLang(l) {
-    if (l === lang) return;
-    var d = document.body.dataset, alt = l === 'en' ? d.altEn : d.altBn;
-    location.href = alt || (l === 'en' ? '/en/' : '/');
+    lang = l;
+    try { localStorage.setItem(LS, l); } catch (e) {}
+    try { var u = new URL(location.href); u.searchParams.set('lang', l); history.replaceState(null, '', u); } catch (e) {}
+    apply();
   }
 
   function copyText(text, btn, keepLabel) {
