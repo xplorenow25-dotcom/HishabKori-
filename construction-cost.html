@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>নির্মাণ খরচ ও মালামালের ক্যালকুলেটর – রড, সিমেন্ট, ইট, বালু ও শ্রমিক খরচ | হিসাব</title>
+<meta name="description" content="বাড়ির আয়তন ও তলা অনুযায়ী রড, সিমেন্ট, ইট, বালু ও খোয়ার পরিমাণ এবং আনুমানিক নির্মাণ খরচ হিসাব করুন। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ফাউন্ডেশন বড় হলে রড বেশি ধরা হয় কেন?","acceptedAnswer":{"@type":"Answer","text":"ভবিষ্যতে তলা বাড়ানোর কথা ভেবে ফাউন্ডেশন বেশি তলার উপযোগী করলে ভিত্তিতে বাড়তি রড লাগে। এই ক্যালকুলেটরে ফাউন্ডেশন পরিকল্পিত তলার চেয়ে যত তলা বেশি, প্রতি বর্গফুটে তত বার ০.৮ কেজি করে রড যোগ হয়।"}},{"@type":"Question","name":"মালামালের দাম কোথা থেকে নেওয়া?","acceptedAnswer":{"@type":"Answer","text":"দামগুলো হিসাব সাইটের ধরে নেওয়া আনুমানিক বাজার গড়। বাজার বদলায়, তাই কেনার আগে স্থানীয় দোকান থেকে দর যাচাই করুন।"}},{"@type":"Question","name":"শ্রমিক খরচ কীভাবে ঠিক করব?","acceptedAnswer":{"@type":"Answer","text":"প্রতি বর্গফুটে সর্বনিম্ন ও সর্বোচ্চ মজুরি লিখুন। ক্যালকুলেটর দুই হারে খরচের পরিসীমা দেখাবে। আসল দর এলাকা ও ঠিকাদারের সঙ্গে চুক্তির ওপর নির্ভর করে।"}},{"@type":"Question","name":"এটি কি ইঞ্জিনিয়ারের নকশার বিকল্প?","acceptedAnswer":{"@type":"Answer","text":"না। বাড়ি বানানোর আগে লাইসেন্সধারী ইঞ্জিনিয়ার দিয়ে নকশা ও কাঠামোর হিসাব করাতে হবে। এই ক্যালকুলেটর শুধু আগাম বাজেটের ধারণা দেয়।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="9" data-title="cc.title" data-desc="cc.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c9t"></span></div>
+  <h1 class="tool-h1" data-i18n="cc.h1"></h1>
+  <p class="lead" data-i18n="cc.lead"></p>
+
+<div class="card"><div class="two"><div><label class="lbl" for="area" data-i18n="cc.area"></label><input class="inp" id="area" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="plan" data-i18n="cc.plan"></label><select class="inp" id="plan"></select></div></div>
+<div style="margin-top:10px"><div><label class="lbl" for="found" data-i18n="cc.found"></label><select class="inp" id="found"></select></div></div>
+<div class="two" style="margin-top:10px"><div><label class="lbl" for="lmin" data-i18n="cc.lmin"></label><input class="inp" id="lmin" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="lmax" data-i18n="cc.lmax"></label><input class="inp" id="lmax" type="text" inputmode="decimal" autocomplete="off" ></div></div></div>
+<div id="msg"></div>
+<div class="res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+<div id="mat"></div>
+<div id="lab"></div>
+<p class="note" data-i18n="est"></p>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="cc.how.p1"></p>
+    <p data-i18n="cc.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="cc.q1"></summary><p data-i18n="cc.a1"></p></details>
+    <details><summary data-i18n="cc.q2"></summary><p data-i18n="cc.a2"></p></details>
+    <details><summary data-i18n="cc.q3"></summary><p data-i18n="cc.a3"></p></details>
+    <details><summary data-i18n="cc.q4"></summary><p data-i18n="cc.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="cc.src"></span></p>
+
+</div>
+
+<!--guides:construction-cost-->
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-construction.js"></script>
+<script src="js/common.js"></script>
+<script src="js/construction-core.js"></script>
+<script src="js/construction.js"></script>
+</body>
+</html>
