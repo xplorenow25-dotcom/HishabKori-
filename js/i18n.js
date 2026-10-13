@@ -223,3 +223,6 @@ Object.assign(window.I18N.en, {
   'pdf.empty': 'Enter your numbers first, then download the PDF.', 'pdf.inputs': 'Your inputs', 'pdf.yes': 'Yes',
   'pdf.generated': 'Generated', 'pdf.by': 'Created with Hishab', 'pdf.tag': 'All your calculations, one place'
 });
+
+Object.assign(window.I18N.bn, { 'c9t': 'নির্মাণ খরচ', 'c9d': 'বাড়ি বানাতে মালামাল ও শ্রমের আনুমানিক খরচ' });
+Object.assign(window.I18N.en, { 'c9t': 'Construction cost', 'c9d': 'Estimated materials and labor to build a house' });

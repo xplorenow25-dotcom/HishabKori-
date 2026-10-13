@@ -47,6 +47,7 @@
     '.rp-tbl th:first-child,.rp-tbl td:first-child{text-align:left}' +
     '.rp-tbl th{background:#EAF3EE;color:#35463D;font-weight:500}' +
     '.rp-tbl thead{display:table-header-group}.rp-tbl tr{break-inside:avoid}' +
+    '.rp-tbl tfoot td{font-weight:600;background:#EAF3EE;border-bottom:0}' +
     '.rp-note{margin-top:18px;background:#FDF1D6;border-left:4px solid #F2A81D;border-radius:6px;padding:9px 12px;font-size:9.5pt;color:#5A4A1A;line-height:1.55;break-inside:avoid}' +
     '.rp-foot{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #D5E5DB;margin-top:16px;padding-top:6px;font-size:8.5pt;color:#5B6E64;break-inside:avoid}' +
     '}';

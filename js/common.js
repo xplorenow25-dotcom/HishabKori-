@@ -12,7 +12,8 @@
     { n: 5, href: 'zakat.html', icon: 'ti-moon-stars', live: true, gold: true },
     { n: 6, href: 'income-tax.html', icon: 'ti-receipt-tax', live: true, gold: true },
     { n: 7, href: 'salary-tax.html', icon: 'ti-wallet', live: true, gold: true },
-    { n: 8, href: 'business-tax.html', icon: 'ti-building-store', live: true, gold: true }
+    { n: 8, href: 'business-tax.html', icon: 'ti-building-store', live: true, gold: true },
+    { n: 9, href: 'construction-cost.html', icon: 'ti-building', live: true }
   ];
 
   function getLang() {
