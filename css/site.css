@@ -260,7 +260,6 @@ header{z-index:30}
 }
 
 /* ===== blog ===== */
-body[data-lang] .tg{display:none}
 .chip-cat{display:inline-block;background:var(--tint);color:var(--green);border-radius:999px;padding:3px 12px;font-size:14px;font-weight:500}
 .post{padding-bottom:10px}
 .post-h1{margin:10px 0 8px;line-height:1.3}
@@ -334,3 +333,24 @@ select.inp{padding-right:34px;text-overflow:ellipsis;white-space:nowrap}
 @media(max-width:560px){
 .two:not([style*="gap:6px"]):has(select){grid-template-columns:1fr}
 }
+
+/* language-specific blocks (blog cards on home and calculator pages) */
+.only-en{display:none}
+html[lang="en"] .only-en{display:block}
+html[lang="en"] .only-bn{display:none}
+
+/* language switch is visible on every page (each page now has its own English or Bangla URL) */
+body[data-lang] .tg{display:none}
+
+.mt{display:flex;gap:10px;align-items:flex-start;background:var(--goldt);border:1px solid #F0DDA8;border-radius:12px;padding:10px 14px;margin:0 0 18px;font-size:15.5px;color:#5A4A1E}
+.mt i{font-size:20px;color:#8A5A00;margin-top:2px}
+.mt a{text-decoration:underline;color:var(--green)}
+
+/* ===== construction calculator ===== */
+.banner{display:flex;gap:14px;align-items:flex-start;background:var(--goldt);border:1px solid #F0DDAA;border-radius:16px;padding:16px 18px;margin-top:14px}
+.banner>i{font-size:28px;color:#8A5A00;flex:none;margin-top:2px}
+.banner b{display:block;font-size:18px;font-weight:600;color:var(--ink)}
+.banner p{color:#5A4A1A;font-size:16px;line-height:1.6;margin-top:2px}
+.tbl tfoot td{font-weight:600;background:#F1F6F2;border-bottom:0}
+.tbl td{vertical-align:top}
+#msg .msg{background:#FBEAEA;border-radius:10px;padding:10px 14px;margin-top:10px}
