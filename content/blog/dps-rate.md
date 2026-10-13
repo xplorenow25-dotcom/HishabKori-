@@ -11,15 +11,15 @@ lang: en
 author: "Rafin Hasan "
 draft: false
 ---
-**Understanding DPS in Gaming: Damage Per Second Explained**
+## **Understanding DPS in Gaming: Damage Per Second Explained**
 
 In gaming, **DPS** stands for **Damage Per Second**. It is a crucial metric used to measure the average amount of damage a character, weapon, or entire team inflicts upon an enemy every second. Originally popularized by Massive Multiplayer Online Role-Playing Games (MMORPGs) like *World of Warcraft*, the term is now widely used across first-person shooters, action RPGs, and strategy games.
 
-**Why DPS Matters**
+### **Why DPS Matters**
 
 Tracking your DPS helps you optimize your character's gear, talents, and ability rotations. A higher score means you can defeat bosses faster, clearing difficult content before your team runs out of resources or succumbs to enrage mechanics.
 
-**Core Combat Roles**
+### **Core Combat Roles**
 
 In most cooperative team games, player roles are divided into three primary categories to maintain balance during encounters:
 
