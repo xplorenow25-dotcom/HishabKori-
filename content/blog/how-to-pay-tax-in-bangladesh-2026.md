@@ -8,6 +8,7 @@ updated: 2026-10-13
 category: tax
 calculator: income-tax
 lang: en
+image: /images/blog/880763904_1791871160975458.jpg
 author: Editorial Team
 draft: false
 ---
