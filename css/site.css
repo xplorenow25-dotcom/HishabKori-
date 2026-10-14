@@ -354,3 +354,26 @@ body[data-lang] .tg{display:none}
 .tbl tfoot td{font-weight:600;background:#F1F6F2;border-bottom:0}
 .tbl td{vertical-align:top}
 #msg .msg{background:#FBEAEA;border-radius:10px;padding:10px 14px;margin-top:10px}
+
+/* ===== percentage + BMI ===== */
+.ct{font-size:19px;font-weight:600;line-height:1.35}
+.bmi-res{background:#fff;color:var(--ink);border:1px solid var(--line);box-shadow:0 14px 34px rgba(11,107,79,.08)}
+.bmi-res small{color:var(--mute);text-align:center;font-size:15px}
+.bmi-res .gauge{max-width:320px;margin:4px auto 0}
+.bmi-res .gauge svg{display:block;width:100%;height:auto}
+.bmi-res .big{text-align:center;font-size:54px;line-height:1.1;margin-top:-4px}
+.bmi-res .w{text-align:center;font-size:22px;font-weight:600;margin-top:2px}
+.bmi-res .legend{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0 8px}
+.lg{display:grid;grid-template-columns:auto 1fr;column-gap:10px;align-items:center;border:1px solid var(--line);border-radius:12px;padding:9px 12px;font-size:15px;line-height:1.35}
+.lg i{width:12px;height:12px;border-radius:50%;grid-row:1 / span 2}
+.lg span{min-width:0}
+.lg em{font-style:normal;color:var(--mute);font-variant-numeric:tabular-nums;font-size:14px}
+.lg.on{background:#F4F8F5;border-color:var(--green);font-weight:600}
+.bmi-res .stat{border-top:1px solid var(--line)}
+.bmi-res .stat span{color:var(--mute)}
+.bmi-res .st{background:var(--tint);color:#26453A}
+.bmi-res .ph{color:var(--mute);text-align:center}
+@media(max-width:480px){.bmi-res .big{font-size:48px}}
+
+.res.bmi-res .stat span:first-child{color:var(--mute)}
+.res.bmi-res .stat b{color:var(--ink)}
