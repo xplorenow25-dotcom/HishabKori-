@@ -4,8 +4,7 @@ Object.assign(window.I18N.bn, {
   'hm.pill': 'ফ্রি · সাইন-আপ ছাড়া · বাংলা ও ইংরেজি',
   'hm.h1': 'সব হিসাব,<br><em>এক জায়গায়</em>',
   'hm.sub': 'আয়কর, ব্যাংক, জমি ও যাকাতের ক্যালকুলেটর, সহজ বাংলায়।',
-  'hm.search': 'কী হিসাব করতে চান? যেমন: বেতনের কর',
-  'hm.quick': 'জনপ্রিয়:', 'hm.empty': 'কিছু পাওয়া যায়নি। নিচে নতুন টুলের অনুরোধ করুন।',
+  'hm.quick': 'জনপ্রিয়:',
   'hm.vis.l': 'টাকা কথায়', 'hm.vis.amt': '১,২৫,০০০', 'hm.vis.r': 'কথায় ফলাফল',
   'hm.vis.w': 'এক লক্ষ পঁচিশ হাজার টাকা মাত্র', 'hm.vis.w2': 'One Lakh Twenty-Five Thousand Taka Only',
   'hm.g1.e': 'আয়কর', 'hm.g1.t': 'আয়কর ক্যালকুলেটর', 'hm.g1.s': 'বেতনভোগী, ব্যবসায়ী ও সাধারণ করদাতার জন্য',
@@ -44,8 +43,7 @@ Object.assign(window.I18N.en, {
   'hm.pill': 'Free · No signup · Bangla and English',
   'hm.h1': 'All your calculations,<br><em>one place</em>',
   'hm.sub': 'Tax, banking, land and zakat calculators in simple Bangla.',
-  'hm.search': 'What do you want to calculate? e.g. salary tax',
-  'hm.quick': 'Popular:', 'hm.empty': 'Nothing found. Request a new tool below.',
+  'hm.quick': 'Popular:', 
   'hm.vis.l': 'Taka in words', 'hm.vis.amt': '1,25,000', 'hm.vis.r': 'Amount in words',
   'hm.vis.w': 'One Lakh Twenty-Five Thousand Taka Only', 'hm.vis.w2': 'এক লক্ষ পঁচিশ হাজার টাকা মাত্র',
   'hm.g1.e': 'Tax', 'hm.g1.t': 'Tax calculators', 'hm.g1.s': 'For employees, business owners and everyday taxpayers',
@@ -78,3 +76,6 @@ Object.assign(window.I18N.en, {
   'hm.req.t': 'Need a tool?', 'hm.req.s': 'Tell us. The next calculator might be yours.',
   'hm.req.ph': 'e.g. pension calculator', 'hm.req.btn': 'Send', 'hm.req.ok': 'Thank you'
 });
+
+Object.assign(window.I18N.bn, { 'hm.g4.e': 'স্বাস্থ্য ও গণিত', 'hm.g4.t': 'স্বাস্থ্য ও শতাংশ', 'hm.g4.s': 'BMI ও শতাংশের দ্রুত হিসাব' });
+Object.assign(window.I18N.en, { 'hm.g4.e': 'Health and math', 'hm.g4.t': 'Health and percentages', 'hm.g4.s': 'Quick BMI and percentage checks' });

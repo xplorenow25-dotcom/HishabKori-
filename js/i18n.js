@@ -226,3 +226,6 @@ Object.assign(window.I18N.en, {
 
 Object.assign(window.I18N.bn, { 'c9t': 'নির্মাণ খরচ', 'c9d': 'বাড়ি বানাতে মালামাল ও শ্রমের আনুমানিক খরচ' });
 Object.assign(window.I18N.en, { 'c9t': 'Construction cost', 'c9d': 'Estimated materials and labor to build a house' });
+
+Object.assign(window.I18N.bn, { 'c10t': 'শতাংশ ক্যালকুলেটর', 'c10d': 'শতাংশ বের করা এবং বাড়া-কমার হিসাব', 'c11t': 'BMI ক্যালকুলেটর', 'c11d': 'উচ্চতা ও ওজন থেকে BMI ও ক্যাটাগরি' });
+Object.assign(window.I18N.en, { 'c10t': 'Percentage calculator', 'c10d': 'Percent of a number, increase and decrease', 'c11t': 'BMI calculator', 'c11d': 'BMI and category from height and weight' });

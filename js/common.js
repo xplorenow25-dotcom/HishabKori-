@@ -13,7 +13,9 @@
     { n: 6, href: 'income-tax.html', icon: 'ti-receipt-tax', live: true, gold: true },
     { n: 7, href: 'salary-tax.html', icon: 'ti-wallet', live: true, gold: true },
     { n: 8, href: 'business-tax.html', icon: 'ti-building-store', live: true, gold: true },
-    { n: 9, href: 'construction-cost.html', icon: 'ti-building', live: true }
+    { n: 9, href: 'construction-cost.html', icon: 'ti-building', live: true },
+    { n: 10, href: 'percentage-calculator.html', icon: 'ti-percentage', live: true },
+    { n: 11, href: 'bmi-calculator.html', icon: 'ti-heartbeat', live: true }
   ];
 
   function getLang() {
