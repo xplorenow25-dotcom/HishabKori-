@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BMI ক্যালকুলেটর – উচ্চতা ও ওজন থেকে বডি মাস ইনডেক্স | হিসাব</title>
+<meta name="description" content="উচ্চতা ও ওজন দিয়ে আপনার BMI জানুন। এশিয়া-প্যাসিফিক ও WHO স্ট্যান্ডার্ড, স্বাভাবিক ওজনের সীমা সহ। ফ্রি ও বাংলায়।">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" rel="stylesheet">
+<link href="css/site.css" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"BMI কী?","acceptedAnswer":{"@type":"Answer","text":"BMI বা বডি মাস ইনডেক্স হলো ওজন ও উচ্চতার অনুপাত। এটি ওজন ঠিক আছে কি না তার একটি মোটামুটি ধারণা দেয়।"}},{"@type":"Question","name":"কেন এশিয়া-প্যাসিফিক মানদণ্ড আগে দেওয়া আছে?","acceptedAnswer":{"@type":"Answer","text":"এশীয়দের জন্য WHO-র এশিয়া-প্যাসিফিক নির্দেশনায় কম BMI থেকেই বেশি ওজনের সীমা শুরু ধরা হয় (২৩ ও ২৫)। চাইলে ওপরের মেনু থেকে আন্তর্জাতিক WHO মানদণ্ড বেছে নিতে পারেন।"}},{"@type":"Question","name":"BMI কি সবার জন্য নির্ভুল?","acceptedAnswer":{"@type":"Answer","text":"না। খেলোয়াড়, শিশু, গর্ভবতী নারী ও বয়স্কদের ক্ষেত্রে এটি ভালো মাপকাঠি নাও হতে পারে। এটি চর্বি কোথায় জমেছে তাও দেখায় না।"}},{"@type":"Question","name":"এটি কি চিকিৎসা পরামর্শ?","acceptedAnswer":{"@type":"Answer","text":"না। এটি শুধু সাধারণ তথ্যের জন্য। নিজের স্বাস্থ্য নিয়ে প্রশ্ন থাকলে ডাক্তারের সঙ্গে কথা বলুন।"}}]}</script>
+</head>
+<body data-page="tool" data-tool="11" data-title="bmi.title" data-desc="bmi.desc">
+
+<header id="site-header"></header>
+
+<main>
+<div class="narrow">
+
+  <div class="bc"><a href="index.html" data-int="index.html" data-i18n="tw.home">হোম</a> / <span data-i18n="c11t"></span></div>
+  <h1 class="tool-h1" data-i18n="bmi.h1"></h1>
+  <p class="lead" data-i18n="bmi.lead"></p>
+
+<div class="card"><div class="two"><div><label class="lbl" for="hu" data-i18n="bmi.hu"></label><select class="inp" id="hu"></select></div><div><label class="lbl" for="std" data-i18n="bmi.std"></label><select class="inp" id="std"></select></div></div>
+<div id="ftWrap" class="two" style="margin-top:10px"><div><label class="lbl" for="hft" data-i18n="bmi.ft"></label><input class="inp" id="hft" type="text" inputmode="decimal" autocomplete="off" ></div><div><label class="lbl" for="hin" data-i18n="bmi.in"></label><input class="inp" id="hin" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div id="cmWrap" class="hide" style="margin-top:10px"><div><label class="lbl" for="hcm" data-i18n="bmi.cm"></label><input class="inp" id="hcm" type="text" inputmode="decimal" autocomplete="off" ></div></div>
+<div style="margin-top:10px"><label class="lbl" for="wt" data-i18n="bmi.wt"></label><div class="two" style="gap:6px"><input class="inp" id="wt" type="text" inputmode="decimal" autocomplete="off"><select class="inp" id="wu" aria-label="unit"></select></div></div>
+<p class="note" data-i18n="bmi.adult"></p></div>
+<div class="res bmi-res" id="res" aria-live="polite"></div>
+<div class="btnrow"><button type="button" class="bt gold" id="copyB"><i class="ti ti-copy"></i> <span data-i18n="copy"></span></button><button type="button" class="bt out" id="shareB"><i class="ti ti-brand-whatsapp"></i> <span data-i18n="share"></span></button></div>
+
+  <div class="ad rect"></div>
+
+  <section class="prose">
+    <h2 data-i18n="tw.how.t">কীভাবে কাজ করে</h2>
+    <p data-i18n="bmi.how.p1"></p>
+    <p data-i18n="bmi.how.p2"></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="tw.faq.t" style="margin-bottom:14px">সাধারণ প্রশ্ন</h2>
+    <details><summary data-i18n="bmi.q1"></summary><p data-i18n="bmi.a1"></p></details>
+    <details><summary data-i18n="bmi.q2"></summary><p data-i18n="bmi.a2"></p></details>
+    <details><summary data-i18n="bmi.q3"></summary><p data-i18n="bmi.a3"></p></details>
+    <details><summary data-i18n="bmi.q4"></summary><p data-i18n="bmi.a4"></p></details>
+  </section>
+
+  <p class="note"><span data-i18n="updated"></span><br><span data-i18n="bmi.src"></span></p>
+
+</div>
+
+<!--guides:bmi-calculator-->
+<div class="wrap">
+  <section>
+    <h2 data-i18n="rel.t" style="margin-bottom:14px">আরও টুলস</h2>
+    <div class="grid" id="related"></div>
+  </section>
+</div>
+</main>
+
+<footer id="site-footer"></footer>
+
+<script src="js/i18n.js"></script>
+<script src="js/i18n-bmi.js"></script>
+<script src="js/common.js"></script>
+<script src="js/bmi-core.js"></script>
+<script src="js/bmi.js"></script>
+</body>
+</html>
