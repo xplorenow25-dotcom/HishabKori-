@@ -69,6 +69,12 @@ content:
               label: Land converter
             - name: taka-in-words
               label: Taka in words
+            - name: construction-cost
+              label: Construction cost
+            - name: percentage-calculator
+              label: Percentage calculator
+            - name: bmi-calculator
+              label: BMI calculator
       - name: lang
         label: Language
         type: select
