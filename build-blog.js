@@ -63,7 +63,10 @@ const CALCS = {
   'dps-fdr': { bn: 'DPS ও FDR', en: 'DPS and FDR', icon: 'ti-pig-money' },
   'zakat': { bn: 'যাকাত', en: 'Zakat', icon: 'ti-moon-stars' },
   'land-converter': { bn: 'জমির হিসাব', en: 'Land converter', icon: 'ti-map-2' },
-  'taka-in-words': { bn: 'টাকা কথায়', en: 'Taka in words', icon: 'ti-coin' }
+  'taka-in-words': { bn: 'টাকা কথায়', en: 'Taka in words', icon: 'ti-coin' },
+  'construction-cost': { bn: 'নির্মাণ খরচ', en: 'Construction cost', icon: 'ti-building' },
+  'percentage-calculator': { bn: 'শতাংশ ক্যালকুলেটর', en: 'Percentage calculator', icon: 'ti-percentage' },
+  'bmi-calculator': { bn: 'BMI ক্যালকুলেটর', en: 'BMI calculator', icon: 'ti-heartbeat' }
 };
 const catOf = p => CATS[p.category] ? p.category : 'general';
 
