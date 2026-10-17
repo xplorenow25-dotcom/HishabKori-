@@ -346,11 +346,66 @@ function guidesSection(posts, calcId) {
   return '<div class="wrap"><section><h2 data-i18n="guides.t" style="margin-bottom:14px">সম্পর্কিত গাইড</h2><div class="pcards">' + items.map(card).join('') + '</div></section></div>';
 }
 
+
+/* ---------- pre-render ----------
+   The page text lives in js/i18n*.js and is normally filled in by JavaScript. Crawlers that do not
+   run JavaScript would see empty headings, so here the Bangla text is written into the HTML at build time.
+   The browser still switches language exactly as before. */
+const vm = require('vm');
+function loadBn() {
+  const ctx = vm.createContext({ window: {} });
+  const dir = path.join(ROOT, 'js');
+  const files = ['i18n.js'].concat(fs.readdirSync(dir).filter(f => /^i18n-.+\.js$/.test(f)).sort());
+  files.forEach(f => {
+    try { vm.runInContext(fs.readFileSync(path.join(dir, f), 'utf8'), ctx); }
+    catch (e) { console.warn('i18n file skipped:', f, e.message); }
+  });
+  return (ctx.window.I18N && ctx.window.I18N.bn) || {};
+}
+function readCommon() {
+  let c = '';
+  try { c = fs.readFileSync(path.join(ROOT, 'js', 'common.js'), 'utf8'); } catch (e) {}
+  const email = (/var EMAIL = '([^']*)'/.exec(c) || [])[1] || '';
+  const logo = (/var LOGO = '(<svg[\s\S]*?<\/svg>)';/.exec(c) || [])[1] || '';
+  const tools = []; let m; const re = /\{ n: (\d+), href: '([^']+)'/g;
+  while ((m = re.exec(c))) tools.push({ n: m[1], href: m[2] });
+  return { email: email, logo: logo, tools: tools };
+}
+let BN = {}, SHELL = { email: '', logo: '', tools: [] };
+
+function bake(html) {
+  const txt = k => String(BN[k]).replace(/\{\{email\}\}/g, SHELL.email);
+  html = html.replace(/<(\w+)((?:\s[^>]*?)?)\sdata-i18n="([^"]+)"([^>]*)>([\s\S]*?)<\/\1>/g,
+    (m, tag, pre, key, post) => (key in BN) ? '<' + tag + pre + ' data-i18n="' + key + '"' + post + '>' + txt(key) + '</' + tag + '>' : m);
+  html = html.replace(/<(input|textarea)((?:\s[^>]*?)?)\sdata-i18n-ph="([^"]+)"([^>]*)>/g, (m, tag, pre, key, post) => {
+    if (!(key in BN)) return m;
+    const clean = (pre + post).replace(/\splaceholder="[^"]*"/g, '');
+    return '<' + tag + clean + ' data-i18n-ph="' + key + '" placeholder="' + esc(txt(key)) + '">';
+  });
+  return html;
+}
+function shell(html, pre) {
+  const t = k => String(BN[k] || '').replace(/\{\{email\}\}/g, SHELL.email), lg = SHELL.logo;
+  const hdr = '<div class="wrap nav"><a class="logo" href="' + pre + 'index.html">' + lg + '<span>হিসাব</span></a><div class="nav-r"><nav class="menu">' +
+    '<a href="' + pre + 'index.html#tools">' + t('nav.tools') + '</a><a href="' + pre + 'blog/">' + t('nav.blog') + '</a>' +
+    '<a href="' + pre + 'index.html#why">' + t('nav.why') + '</a><a href="' + pre + 'index.html#faq">' + t('nav.faq') + '</a></nav></div></div>';
+  const tl = SHELL.tools.map(x => '<a href="' + pre + x.href + '">' + t('c' + x.n + 't') + '</a>').join('');
+  const ftr = '<div class="wrap"><div class="fg"><div><a class="logo" href="' + pre + 'index.html">' + lg + '<span>হিসাব</span></a><p>' + t('f.blurb') + '</p></div>' +
+    '<div><h4>' + t('f.tools') + '</h4>' + tl + '</div>' +
+    '<div><h4>' + t('f.company') + '</h4><a href="' + pre + 'blog/">' + t('nav.blog') + '</a><a href="' + pre + 'about.html">' + t('f.about') + '</a><a href="' + pre + 'contact.html">' + t('f.contact') + '</a></div>' +
+    '<div><h4>' + t('f.legal') + '</h4><a href="' + pre + 'privacy.html">' + t('f.privacy') + '</a><a href="' + pre + 'terms.html">' + t('f.terms') + '</a></div></div>' +
+    '<div class="disc">' + t('f.disc') + '<br>' + t('f.copy') + '</div></div>';
+  return html.replace('<header id="site-header"></header>', '<header id="site-header">' + hdr + '</header>')
+    .replace('<footer id="site-footer"></footer>', '<footer id="site-footer">' + ftr + '</footer>');
+}
+function finalize(html, pre) { return shell(bake(html), pre); }
+
 /* ---------- main ---------- */
 function copyDir(src, dst) { if (fs.existsSync(src)) fs.cpSync(src, dst, { recursive: true }); }
 function main() {
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(path.join(OUT, 'blog'), { recursive: true });
+  BN = loadBn(); SHELL = readCommon();
   const posts = loadPosts();
 
   const staticPages = [];
@@ -358,14 +413,14 @@ function main() {
     let h = fs.readFileSync(path.join(ROOT, f), 'utf8');
     h = h.replace('<!--latest-posts-->', latestSection(posts));
     h = h.replace(/<!--guides:([a-z-]+)-->/g, (m, id) => guidesSection(posts, id));
-    fs.writeFileSync(path.join(OUT, f), h);
+    fs.writeFileSync(path.join(OUT, f), finalize(h, ''));
     if (f !== '404.html') staticPages.push(f);
   });
   ['favicon.svg'].forEach(f => { if (fs.existsSync(path.join(ROOT, f))) fs.copyFileSync(path.join(ROOT, f), path.join(OUT, f)); });
   ['css', 'js', 'images'].forEach(d => copyDir(path.join(ROOT, d), path.join(OUT, d)));
 
-  posts.forEach(p => fs.writeFileSync(path.join(OUT, 'blog', p.slug + '.html'), postPage(p, posts)));
-  fs.writeFileSync(path.join(OUT, 'blog', 'index.html'), indexPage(posts));
+  posts.forEach(p => fs.writeFileSync(path.join(OUT, 'blog', p.slug + '.html'), finalize(postPage(p, posts), '/')));
+  fs.writeFileSync(path.join(OUT, 'blog', 'index.html'), finalize(indexPage(posts), '/'));
 
   const today = new Date().toISOString().slice(0, 10);
   const urls = [];
