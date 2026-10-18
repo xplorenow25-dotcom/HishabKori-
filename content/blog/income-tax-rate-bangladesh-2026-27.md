@@ -9,6 +9,7 @@ updated: 2026-10-18
 category: tax
 calculator: income-tax
 lang: en
+image: /images/blog/ChatGPT Image Oct 18, 2026, 12_28_35 PM.png
 author: Editorial Team
 draft: false
 ---
@@ -19,31 +20,21 @@ This guide covers the current slabs, the tax-free limit for each taxpayer catego
 ## Income Tax in Bangladesh 2026-27 at a Glance
 
 - General tax-free limit: Tk 4,00,000
-
 - Tax rates: 10%, 15%, 20%, 25% and 30%
-
 - The old 5% slab has been removed
-
 - Minimum tax: Tk 5,000 (Tk 1,000 for new taxpayers)
-
 - Investment rebate: 10% of eligible investment, within set caps
-
 - Online return filing is mandatory for most individuals
 
 ## Individual Income Tax Slabs for 2026-27
 
-For the 2026-27 and 2027-28 assessment years, the slabs are 10% on the next Tk 3,00,000, 15% on the next Tk 4,00,000, 20% on the next Tk 5,00,000, 25% on the next Tk 20,00,000, and 30% on the rest. For a general taxpayer, that works out as follows: [pwc]
+For the 2026-27 and 2027-28 assessment years, the slabs are 10% on the next Tk 3,00,000, 15% on the next Tk 4,00,000, 20% on the next Tk 5,00,000, 25% on the next Tk 20,00,000, and 30% on the rest. For a general taxpayer, that works out as follows: 
 
 - First Tk 4,00,000: 0% (tax-free)
-
 - Next Tk 3,00,000 (up to Tk 7,00,000): 10%
-
 - Next Tk 4,00,000 (up to Tk 11,00,000): 15%
-
 - Next Tk 5,00,000 (up to Tk 16,00,000): 20%
-
 - Next Tk 20,00,000 (up to Tk 36,00,000): 25%
-
 - Anything above Tk 36,00,000: 30%
 
 Each rate applies only to the part of your income that falls inside that slab, not to your whole income. If your category has a higher tax-free limit, the zero-rate band is larger and the later slabs follow in the same order.
@@ -51,11 +42,8 @@ Each rate applies only to the part of your income that falls inside that slab, n
 ## What Changed From Last Year?
 
 - The tax-free limit was Tk 3.5 lakh before the budget. The budget first proposed Tk 3,75,000, and parliament raised it to Tk 4,00,000. 
-
 - The 5% bracket is gone, so the first taxable slab above the limit is now 10%. 
-
 - The investment rebate rate has fallen from 15% to 10%.
-
 - The minimum tax is now one flat amount instead of varying by location.
 
 ## Tax-Free Income Limit by Taxpayer Category
@@ -63,13 +51,9 @@ Each rate applies only to the part of your income that falls inside that slab, n
 The Finance Act sets different tax-free limits for different groups in 2026-27 and 2027-28. 
 
 - General taxpayers: Tk 4,00,000
-
 - Women and senior citizens aged 65 or above: Tk 4,50,000
-
 - Persons with disabilities: Tk 5,25,000
-
 - Third-gender taxpayers: Tk 5,25,000
-
 - War-wounded gazetted freedom fighters and gazetted July fighters: Tk 5,50,000
 
 Parents or legal guardians of a person with a disability get an extra Tk 50,000 on top of their own limit. 
@@ -81,27 +65,18 @@ Parliament set the general limit at Tk 4,00,000 for FY2026-27 and FY2027-28, Tk 
 ## How to Calculate Your Income Tax Step by Step
 
 1. Add up your income from all sources for the year.
-
 2. If you are salaried, subtract the salary exemption. It is the lower of one-third of your employment income or Tk 5,00,000.
-
 3. Apply the slabs to your taxable income.
-
 4. Subtract any investment rebate you qualify for.
-
 5. Check the minimum tax and subtract tax already deducted at source.
 
 ### Example 1: Salary of Tk 12,00,000 a Year
 
 - One-third of salary is Tk 4,00,000, which is below the Tk 5,00,000 cap, so Tk 4,00,000 is exempt
-
 - Taxable income: Tk 8,00,000
-
 - Tax on the first Tk 4,00,000: Tk 0
-
 - Tax on the next Tk 3,00,000 at 10%: Tk 30,000
-
 - Tax on the remaining Tk 1,00,000 at 15%: Tk 15,000
-
 - Tax before rebate: Tk 45,000
 
 If this taxpayer makes eligible investments of Tk 2,40,000, the rebate is 10% of that, or Tk 24,000. That matches the cap of 3% of taxable income (Tk 24,000), so tax payable falls to about Tk 21,000. This is an illustration and ignores tax already deducted at source.
@@ -109,15 +84,10 @@ If this taxpayer makes eligible investments of Tk 2,40,000, the rebate is 10% of
 ### Example 2: Taxable Income of Tk 20,00,000
 
 - First Tk 4,00,000: Tk 0
-
 - Next Tk 3,00,000 at 10%: Tk 30,000
-
 - Next Tk 4,00,000 at 15%: Tk 60,000
-
 - Next Tk 5,00,000 at 20%: Tk 1,00,000
-
 - Remaining Tk 4,00,000 at 25%: Tk 1,00,000
-
 - Tax before rebate: Tk 2,90,000
 
 You can run your own numbers in our [Income Tax](https://hishabkori.finalboss25.workers.dev/income-tax?lang=bn) Calculator and [Salary Tax](https://hishabkori.finalboss25.workers.dev/salary-tax?lang=bn) Calculator.
@@ -139,11 +109,8 @@ The NBR has made online return filing mandatory for all individual taxpayers. Pa
 The Finance Act 2026 added incentives and penalties based on when you file: 
 
 - July 1 to September 30: 5% rebate on tax payable, up to Tk 25,000 (this window has closed for 2026)
-
 - October 1 to December 31: no rebate and no additional tax
-
 - January 1 to March 31, 2027: additional tax of 2% or Tk 3,000, whichever is higher
-
 - April 1 to June 30, 2027: additional tax of 5% or Tk 5,000, whichever is higher
 
 If you have not filed yet, file by December 31 to avoid the extra tax. File through the NBR e-Return portal at [etaxnbr.gov.bd](http://etaxnbr.gov.bd).
@@ -155,13 +122,9 @@ A surcharge on net wealth applies above Tk 4 crore. It is charged as a percentag
 ## Other Changes in the Finance Act 2026 That May Affect You
 
 - A non-resident individual who is not a Bangladeshi citizen is generally taxed at a flat 30%. 
-
 - Donations to the Centre for Zakat Management are now eligible for deduction. Our Zakat Calculator can help you work out your zakat.
-
 - Income from freelancing and content creation is listed as exempt. Check the conditions in NBR's notification before relying on it.
-
 - The proposal to require a TIN for opening bank accounts was withdrawn. 
-
 - Loans, advances or deposits above Tk 5 lakh received outside banking channels may be taxed as other income.
 
 ## Company Tax Rates in Bangladesh 2026-27
@@ -169,21 +132,13 @@ A surcharge on net wealth applies above Tk 4 crore. It is charged as a percentag
 These corporate rates apply from the 2026-27 assessment year through 2030-31: 
 
 - Listed company (at least 10% of paid-up capital offered to the public): 22.5%, or 20% if all transactions go through banks
-
 - Listed company (less than 10% offered): 25%, or 22.5% with all-bank transactions
-
 - Other companies: 27.5%, or 25% with all-bank transactions
-
 - Listed banks, insurance and finance companies (excluding merchant banks): 37.5%
-
 - Non-listed banks, insurance and finance companies: 40%
-
 - Tobacco manufacturers: 45%
-
 - Firms, trusts and associations of persons: 27.5%
-
 - Cooperative societies: 20%
-
 - Private universities and specified colleges: 5%
 
 For business income, try our [Business Tax Calculator.](https://hishabkori.finalboss25.workers.dev/business-tax?lang=bn)
@@ -219,12 +174,8 @@ This article is for general information and is not tax advice. Tax rules can cha
 ## Sources and Official References
 
 - National Board of Revenue (NBR): [nbr.gov.bd](http://nbr.gov.bd)
-
 - NBR e-Return portal: [etaxnbr.gov.bd](http://etaxnbr.gov.bd)
-
 - Finance Act 2026 and Income Tax Act 2023
-
 - PwC Bangladesh, Finance Act 2026: Key Amendments
-
 - Daily Star, The Business Standard and Dhaka Tribune coverage of the Finance Bill 2026
 
