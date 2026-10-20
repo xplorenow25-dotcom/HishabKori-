@@ -14,6 +14,14 @@ const OUT = path.join(ROOT, 'dist');
 const SITE_URL = (process.env.SITE_URL || 'https://hishabkori.finalboss25.workers.dev').replace(/\/$/, '');
 const SITE_NAME = 'হিসাব (Hishab)';
 
+// ===== AD SLOTS ======================================================================
+// Right now these are empty placeholders. When AdSense approves you, paste your ad code here.
+// Layout: title -> [thin ad] -> intro -> paragraph 1 -> paragraph 2 -> [main ad] -> contents box
+//         -> then one more ad after every 3 paragraphs (never inside the FAQ section).
+const AD_TOP = '<div class="ad"></div>';      // thin unit under the title (only when the article has no cover photo)
+const AD_IN = '<div class="ad rect"></div>';  // in-article unit
+const AD_IN_MAX = 4;                           // most in-article ads on one page
+
 /* ---------- small helpers ---------- */
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const stripTags = s => String(s).replace(/<[^>]+>/g, '').replace(/&amp;/g, '&').replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&quot;/g, '"').replace(/&#\d+;/g, ' ');
@@ -199,7 +207,7 @@ function markdown(src) {
     if (/^!\[[^\]]*\]\([^)\s]+\)$/.test(text)) out.push('<figure>' + inline(text) + '</figure>');
     else out.push('<p>' + inline(text) + '</p>');
   }
-  return { html: out.join('\n'), heads: heads };
+  return { html: out.join('\n'), heads: heads, blocks: out };
 }
 
 function extractFaq(body) {
@@ -236,7 +244,7 @@ function loadPosts() {
       date: String(data.date || '').slice(0, 10), updated: String(data.updated || '').slice(0, 10),
       category: String(data.category || 'general'), calculator: String(data.calculator || ''),
       image: String(data.image || ''), author: String(data.author || ''),
-      html: r.html, heads: r.heads, faq: extractFaq(body), minutes: Math.max(1, Math.round(words / (lang === 'bn' ? 170 : 200)))
+      html: r.html, blocks: r.blocks, heads: r.heads, faq: extractFaq(body), minutes: Math.max(1, Math.round(words / (lang === 'bn' ? 170 : 200)))
     });
   });
   posts.sort((a, b) => (b.date > a.date ? 1 : b.date < a.date ? -1 : 0));
@@ -271,14 +279,33 @@ function pageHead(o) {
     FONTS + '\n' + (o.ld || []).map(j => '<script type="application/ld+json">' + JSON.stringify(j).replace(/</g, '\\u003c') + '</script>').join('\n') + '\n</head>\n';
 }
 
+function bodyWithAds(p, tocHtml) {
+  const faqRe = /^(প্রশ্নোত্তর|সাধারণ প্রশ্ন|সচরাচর জিজ্ঞাসিত প্রশ্ন|FAQ|Frequently asked questions|Common questions)$/i;
+  const out = [];
+  let paras = 0, ads = 0, inFaq = false, tocPlaced = !tocHtml;
+  p.blocks.forEach((b, idx) => {
+    out.push(b);
+    const hm = /^<h2 id="[^"]*">([\s\S]*)<\/h2>$/.exec(b);
+    if (hm && faqRe.test(stripTags(hm[1]).trim())) inFaq = true;
+    if (!/^<p>/.test(b)) return;
+    paras++;
+    const isLast = idx === p.blocks.length - 1;
+    if (!inFaq && !isLast && ads < AD_IN_MAX && (paras === 2 || (paras > 2 && (paras - 2) % 3 === 0))) {
+      out.push(AD_IN); ads++;
+      if (!tocPlaced) { out.push(tocHtml); tocPlaced = true; }
+    }
+  });
+  if (!tocPlaced) out.unshift(tocHtml);
+  return out.join('\n');
+}
+
 function postPage(p, all) {
   const L = p.lang, T = UI[L], cat = CATS[catOf(p)];
   const url = SITE_URL + '/blog/' + p.slug;
   const img = p.image ? (/^https?:/.test(p.image) ? p.image : SITE_URL + p.image) : '';
   const toc = p.heads.filter(h => h.lvl === 2);
-  let body = p.html;
-  const h2s = [...body.matchAll(/<h2 /g)];
-  if (h2s.length >= 3) { const at = h2s[2].index; body = body.slice(0, at) + '<div class="ad rect"></div>\n' + body.slice(at); }
+  const tocHtml = toc.length >= 3 ? '<nav class="toc" aria-label="' + T.toc + '"><b>' + T.toc + '</b><ol>' + toc.map(t => '<li><a href="#' + t.id + '">' + esc(t.text) + '</a></li>').join('') + '</ol></nav>' : '';
+  const body = bodyWithAds(p, tocHtml);
   const calc = CALCS[p.calculator];
   const related = all.filter(x => x.slug !== p.slug && x.lang === p.lang)
     .sort((a, b) => (catOf(b) === catOf(p)) - (catOf(a) === catOf(p))).slice(0, 3);
@@ -303,11 +330,10 @@ function postPage(p, all) {
     '<div class="meta"><span>' + fmtDate(p.date, L) + '</span>' + (p.updated ? '<span>' + T.updated + ': ' + fmtDate(p.updated, L) + '</span>' : '') +
     '<span>' + mins + '</span><span>' + esc(p.author || T.author) + '</span></div>\n' +
     (p.image ? '<figure class="cover"><img src="' + esc(p.image) + '" alt="' + esc(p.title) + '"></figure>\n' : '') +
-    '<p class="lead">' + esc(p.desc) + '</p>\n';
-  if (toc.length >= 3) h += '<nav class="toc" aria-label="' + T.toc + '"><b>' + T.toc + '</b><ol>' + toc.map(t => '<li><a href="#' + t.id + '">' + esc(t.text) + '</a></li>').join('') + '</ol></nav>\n';
+    (p.image ? '' : AD_TOP + '\n') + '<p class="lead">' + esc(p.desc) + '</p>\n';
   h += '<div class="post-body">\n' + body + '\n</div>\n';
   if (calc) h += '<a class="cta" href="/' + p.calculator + '.html"><span class="ctai"><i class="ti ' + calc.icon + '"></i></span><span class="ctat"><b>' + T.try + '</b><span>' + calc[L] + '</span></span><i class="ti ti-arrow-right"></i></a>\n';
-  h += '<div class="ad rect"></div>\n<aside class="abox"><b>' + esc(p.author || T.author) + '</b><p>' + T.disc + '</p></aside>\n</article>\n';
+  h += '<aside class="abox"><b>' + esc(p.author || T.author) + '</b><p>' + T.disc + '</p></aside>\n</article>\n';
   if (related.length) h += '<div class="wrap"><section class="sec"><h2>' + T.related + '</h2><div class="pcards">' + related.map(card).join('') + '</div></section></div>\n';
   h += '</main>\n<footer id="site-footer"></footer>\n' + SCRIPTS + '\n</body>\n</html>\n';
   return h;
